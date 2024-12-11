@@ -91,25 +91,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize collapsible sections
     const categoryHeaders = document.querySelectorAll('.category-header');
     categoryHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const isActive = header.classList.contains('active');
-            
-            // Close all other active sections
-            document.querySelectorAll('.category-header.active').forEach(activeHeader => {
-                if (activeHeader !== header) {
-                    activeHeader.classList.remove('active');
-                    activeHeader.nextElementSibling.classList.remove('active');
-                }
-            });
-            
-            // Toggle current section
-            header.classList.toggle('active');
-            content.classList.toggle('active');
-            
-            // Smooth scroll to the header if it's being opened
-            if (!isActive) {
-                header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        header.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            content.classList.toggle('show');
+
+            if (this.classList.contains('active')) {
+                categoryHeaders.forEach(otherHeader => {
+                    if (otherHeader !== this) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.classList.remove('show');
+                    }
+                });
             }
         });
     });

@@ -9,21 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta property="og:image" content="assets/favicon.png" />
-    <meta property="og:title" content="Joey's Inn - Digital Guidebook" />
-    <meta property="og:description" content="Collect moments, not things" />
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="assets/heroimage.jpg" as="image">
+    <meta property="og:title" content="Mrudhgandh PoolVilla - Digital Guidebook" />
+    <meta property="og:description" content="Mulshi, Pune" />
+    <meta name="description" content="Experience luxury stay at Mrudgandh PoolVilla in Mulshi, Pune. Featuring an infinity pool, tree house, and panoramic views.">
+    <meta name="keywords" content="pool villa, mulshi, pune villa, luxury stay">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="js/script.js" as="script">
-    <link rel="stylesheet" href="css/modal-updates.css">
+    <link rel="preload" href="assets/heroimage.webp" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
 </head>
 <body>
     <div class="container">
         <div class="hero-image">
-            <img src="assets/heroimage.jpg" alt="Joey's Inn Exterior" loading="eager" 
-                 width="1200" height="800"
-                 fetchpriority="high">
+            <picture>
+                <source srcset="assets/heroimage.webp" type="image/webp">
+                <source srcset="assets/heroimage.jpg" type="image/jpeg">
+                <img src="assets/heroimage.jpg" alt="Joey's Inn Exterior" width="1200" height="800" loading="eager" fetchpriority="high">
+            </picture>
         </div>
         <header>
             <h1>Welcome to<br>Mrudgandh PoolVilla</h1>
@@ -75,8 +79,7 @@
 
         <section class="featured-sections">
             <div class="feature-card" id="gallery-card">
-                <img src="assets/gallery/1.png" alt="Property Gallery" loading="lazy"
-                     width="400" height="300">
+                <img src="assets/gallery/1.png" alt="Property Gallery">
                 <div class="card-content">
                     <h2>Gallery</h2>
                     <p>View property images</p>
@@ -84,8 +87,10 @@
             </div>
 
             <div class="feature-card" id="host-favorites">
-                <img src="assets/hostfav.jpg" alt="Host favorites" loading="lazy"
-                     width="400" height="300">
+                <picture>
+                    <source srcset="assets/hostfav.jpg" type="image/jpeg">
+                    <img src="assets/hostfav.jpg" alt="Host favorites" width="600" height="400" loading="lazy">
+                </picture>
                 <div class="card-content">
                     <h2>Host favorites</h2>
                     <p>Local recommendations</p>
@@ -93,8 +98,7 @@
             </div>
 
             <div class="feature-card" id="amenities-card">
-                <img src="assets/amenities.jpg" alt="Amenities" loading="lazy"
-                     width="400" height="300">
+                <img src="assets/amenities.jpg" alt="Amenities">
                 <div class="card-content">
                     <h2>Amenities</h2>
                     <p>Find what's inside</p>
@@ -120,22 +124,25 @@
             <div class="booking-options">
                 <a href="https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1733899578_P3ilALMMs3jNQJbM" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <i class="fab fa-airbnb booking-icon"></i>
+                        <i class="fab fa-airbnb"></i>
                         <h3>Airbnb</h3>
+                        <p>Book on Airbnb</p>
                     </div>
                 </a>
                 
                 <a href="https://www.booking.com/hotel/in/mrudugandh-forest-villa.en-gb.html" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <img src="assets/booking.png" alt="Booking.com" class="booking-icon">
+                        <img src="assets/booking.png" alt="Booking.com" class="platform-icon">
                         <h3>Booking.com</h3>
+                        <p>Book on Booking.com</p>
                     </div>
                 </a>
                 
                 <a href="https://www.makemytrip.com/hotels/mrudugandh_villa-details-mulshi.html" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <img src="assets/mmt.png" alt="MakeMyTrip" class="booking-icon">
+                        <img src="assets/mmt.png" alt="MakeMyTrip" class="platform-icon">
                         <h3>Make My Trip</h3>
+                        <p>Book on MakeMyTrip</p>
                     </div>
                 </a>
             </div>
@@ -148,78 +155,52 @@
             <h2>Property Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/gallery/1.png" alt="Property View" loading="lazy"
-                         width="300" height="200">
+                    <picture>
+                        <source srcset="assets/gallery/1.webp" type="image/webp">
+                        <source srcset="assets/gallery/1.png" type="image/png">
+                        <img src="assets/gallery/1.png" alt="Property View" width="400" height="300" loading="lazy">
+                    </picture>
+                    <p>Property View</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Pool Area</p>
-                    </div>
+                    <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy">
+                    <p>Pool Area</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Tree House</p>
-                    </div>
+                    <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy">
+                    <p>Tree House</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/common.png" alt="Living Space" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Living Space</p>
-                    </div>
+                    <img src="assets/gallery/common.png" alt="Living Space" loading="lazy">
+                    <p>Living Space</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Bedroom</p>
-                    </div>
+                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy">
+                    <p>Bedroom</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Outdoor Dining</p>
-                    </div>
+                    <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy">
+                    <p>Outdoor Dining</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Indoor Games</p>
-                    </div>
+                    <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy">
+                    <p>Indoor Games</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Indoor Games</p>
-                    </div>
+                    <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy">
+                    <p>Indoor Games</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Room View</p>
-                    </div>
+                    <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy">
+                    <p>Room View</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Outdoor Space</p>
-                    </div>
+                    <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy">
+                    <p>Outdoor Space</p>
                 </div>
                 <div class="gallery-item">
-                    <div class="image-container">
-                        <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy"
-                             width="300" height="200">
-                        <p class="image-caption">Balcony</p>
-                    </div>
+                    <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy">
+                    <p>Balcony</p>
                 </div>
                 <!-- Add more gallery items based on your images -->
             </div>
@@ -491,11 +472,10 @@
             
             <div class="modal-sections">
                 <div class="modal-section highlight-section">
-                    <h3>‍♂️ Pool Area</h3>
+                    <h3>🌟‍♂️ Pool Area</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image" loading="lazy"
-                                 width="400" height="300">
+                            <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image">
                             <h4>Infinity Swimming Pool</h4>
                             <ul>
                                 <li>30 ft. X 16 ft. pool size</li>
@@ -513,8 +493,7 @@
                     <h3>🌅 Attached Deck</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/dining_table.jpg" alt="Outdoor Dining" class="exp-image" loading="lazy"
-                                 width="400" height="300">
+                            <img src="assets/dining_table.jpg" alt="Outdoor Dining" class="exp-image">
                             <h4>Outdoor Living Space</h4>
                             <ul>
                                 <li>Spacious Deck Area</li>
@@ -531,8 +510,7 @@
                     <h3>🎮 Tree House</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/external2.jpg" alt="Tree House" class="exp-image" loading="lazy"
-                                 width="400" height="300">
+                            <img src="assets/external2.jpg" alt="Tree House" class="exp-image">
                             <h4>Independent Tree House Bedroom</h4>
                             <ul>
                                 <li>Located on Fourth level and comes with a pool view</li>
@@ -796,5 +774,17 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script>
+        // Defer non-critical CSS
+        const loadDeferredStyles = () => {
+            const fontAwesome = document.createElement('link');
+            fontAwesome.rel = 'stylesheet';
+            fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+            document.head.appendChild(fontAwesome);
+        };
+        
+        // Load non-critical CSS after page load
+        window.addEventListener('load', loadDeferredStyles);
+    </script>
 </body>
 </html>
