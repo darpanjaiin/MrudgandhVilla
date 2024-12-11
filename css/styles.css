@@ -47,7 +47,7 @@ body {
     max-width: 100%;
     max-width: 480px;
     width: 100%;
-    background-color: white;
+    background-color: rgb(239, 233, 233);
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -216,30 +216,50 @@ h1 {
 
 /* Modal Header Styles */
 .modal-content h2 {
-    position: sticky; /* Make header sticky instead of fixed */
-    top: 0;
-    background: #fff;
     margin: -20px -20px 20px -20px;
     padding: 20px;
     border-bottom: 1px solid #eee;
     border-radius: 12px 12px 0 0;
-    z-index: 1;
+    background: white;
 }
 
 /* Close Button Styles */
 .close {
-    position: absolute;
-    right: 20px;
+    position: fixed;
+    right: calc(5% + 20px); /* Adjust based on modal margin */
     top: 20px;
     font-size: 24px;
     cursor: pointer;
-    color: #666;
-    z-index: 2;
-    transition: color 0.2s ease;
+    color: #333;
+    z-index: 1002; /* Higher than modal content */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 50%;
+    transition: all 0.2s ease;
 }
 
 .close:hover {
-    color: #000;
+    background: #eee;
+    transform: scale(1.1);
+}
+
+/* Adjust close button position for large modals */
+.modal-large .close {
+    right: calc(5% + 20px);
+}
+
+@media screen and (min-width: 768px) {
+    .close {
+        right: calc((100% - 600px)/2 + 20px); /* For regular modals */
+    }
+    
+    .modal-large .close {
+        right: calc((100% - 800px)/2 + 20px); /* For large modals */
+    }
 }
 
 /* Modal Animation */
@@ -1378,8 +1398,12 @@ body {
 
 .review-link {
     text-decoration: none;
-    color: inherit;
+    color: #666;
     display: block;
+}
+
+.review-link:hover {
+    color: #333;
 }
 
 .review-content {
@@ -1526,5 +1550,38 @@ body {
     .gallery-item {
         aspect-ratio: 16/9;
     }
+}
+
+/* Map Button Styles */
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #000;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: transform 0.2s ease;
+    margin-top: 16px;
+}
+
+.map-button:active {
+    transform: scale(0.98);
+}
+
+.map-button i {
+    font-size: 16px;
+}
+
+/* Make sure modal header is always white */
+.modal-content h2 {
+    background: white;
+}
+
+.modal-content h2 {
+    color: #333;
 }
   
