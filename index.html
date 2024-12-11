@@ -11,11 +11,18 @@
     <meta property="og:image" content="assets/favicon.png" />
     <meta property="og:title" content="Joey's Inn - Digital Guidebook" />
     <meta property="og:description" content="Collect moments, not things" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/heroimage.jpg" as="image">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
 </head>
 <body>
     <div class="container">
         <div class="hero-image">
-            <img src="assets/heroimage.jpg" alt="Joey's Inn Exterior" loading="eager">
+            <img src="assets/heroimage.jpg" alt="Joey's Inn Exterior" loading="eager" 
+                 width="1200" height="800"
+                 fetchpriority="high">
         </div>
         <header>
             <h1>Welcome to<br>Mrudgandh PoolVilla</h1>
@@ -66,8 +73,18 @@
         </div>
 
         <section class="featured-sections">
+            <div class="feature-card" id="gallery-card">
+                <img src="assets/gallery/1.png" alt="Property Gallery" loading="lazy"
+                     width="400" height="300">
+                <div class="card-content">
+                    <h2>Gallery</h2>
+                    <p>View property images</p>
+                </div>
+            </div>
+
             <div class="feature-card" id="host-favorites">
-                <img src="assets/hostfav.jpg" alt="Host favorites">
+                <img src="assets/hostfav.jpg" alt="Host favorites" loading="lazy"
+                     width="400" height="300">
                 <div class="card-content">
                     <h2>Host favorites</h2>
                     <p>Local recommendations</p>
@@ -75,20 +92,14 @@
             </div>
 
             <div class="feature-card" id="amenities-card">
-                <img src="assets/amenities.jpg" alt="Amenities">
+                <img src="assets/amenities.jpg" alt="Amenities" loading="lazy"
+                     width="400" height="300">
                 <div class="card-content">
                     <h2>Amenities</h2>
                     <p>Find what's inside</p>
                 </div>
             </div>
 
-            <div class="feature-card" id="gallery-card">
-                <img src="assets/gallery/1.png" alt="Property Gallery">
-                <div class="card-content">
-                    <h2>Gallery</h2>
-                    <p>View property images</p>
-                </div>
-            </div>
         </section>
 
         <footer>
@@ -139,47 +150,58 @@
             <h2>Property Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/gallery/1.png" alt="Property View" loading="lazy">
+                    <img src="assets/gallery/1.png" alt="Property View" loading="lazy"
+                         width="300" height="200">
                     <p>Property View</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy">
+                    <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy"
+                         width="300" height="200">
                     <p>Pool Area</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy">
+                    <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy"
+                         width="300" height="200">
                     <p>Tree House</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/common.png" alt="Living Space" loading="lazy">
+                    <img src="assets/gallery/common.png" alt="Living Space" loading="lazy"
+                         width="300" height="200">
                     <p>Living Space</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy">
+                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy"
+                         width="300" height="200">
                     <p>Bedroom</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy">
+                    <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy"
+                         width="300" height="200">
                     <p>Outdoor Dining</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy">
+                    <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy"
+                         width="300" height="200">
                     <p>Indoor Games</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy">
+                    <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy"
+                         width="300" height="200">
                     <p>Indoor Games</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy">
+                    <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy"
+                         width="300" height="200">
                     <p>Room View</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy">
+                    <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy"
+                         width="300" height="200">
                     <p>Outdoor Space</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy">
+                    <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy"
+                         width="300" height="200">
                     <p>Balcony</p>
                 </div>
                 <!-- Add more gallery items based on your images -->
@@ -455,7 +477,8 @@
                     <h3>🌟‍♂️ Pool Area</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image">
+                            <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image" loading="lazy"
+                                 width="400" height="300">
                             <h4>Infinity Swimming Pool</h4>
                             <ul>
                                 <li>30 ft. X 16 ft. pool size</li>
@@ -473,7 +496,8 @@
                     <h3>🌅 Attached Deck</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/dining_table.jpg" alt="Outdoor Dining" class="exp-image">
+                            <img src="assets/dining_table.jpg" alt="Outdoor Dining" class="exp-image" loading="lazy"
+                                 width="400" height="300">
                             <h4>Outdoor Living Space</h4>
                             <ul>
                                 <li>Spacious Deck Area</li>
@@ -490,7 +514,8 @@
                     <h3>🎮 Tree House</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
-                            <img src="assets/external2.jpg" alt="Tree House" class="exp-image">
+                            <img src="assets/external2.jpg" alt="Tree House" class="exp-image" loading="lazy"
+                                 width="400" height="300">
                             <h4>Independent Tree House Bedroom</h4>
                             <ul>
                                 <li>Located on Fourth level and comes with a pool view</li>
