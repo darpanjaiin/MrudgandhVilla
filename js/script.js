@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal mapping
     const modalMapping = {
         'wifi-btn': 'wifi-modal',
-        'howto-btn': 'howto-modal',
+        'gallery-btn': 'gallery-modal',
         'nearby-btn': 'nearby-modal',
         'emergency-btn': 'emergency-modal',
         'rules-btn': 'rules-modal',
@@ -157,4 +157,46 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryHeaders[0].classList.add('active');
         categoryHeaders[0].nextElementSibling.classList.add('show');
     }
+
+    // Add this to your existing script.js
+    function initializeGallery() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const body = document.body;
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                
+                const lightboxImg = document.createElement('img');
+                lightboxImg.src = img.src;
+                
+                const closeBtn = document.createElement('span');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '&times;';
+                
+                lightbox.appendChild(lightboxImg);
+                lightbox.appendChild(closeBtn);
+                body.appendChild(lightbox);
+                
+                setTimeout(() => lightbox.classList.add('active'), 10);
+                
+                const closeLightbox = () => {
+                    lightbox.classList.remove('active');
+                    setTimeout(() => lightbox.remove(), 300);
+                };
+                
+                closeBtn.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+            });
+        });
+    }
+
+    // Add this to your DOMContentLoaded event listener
+    document.getElementById('gallery-btn').addEventListener('click', () => {
+        setTimeout(initializeGallery, 100);
+    });
 }); 
