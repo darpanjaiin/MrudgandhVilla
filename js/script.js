@@ -32,16 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) {
-            modal.style.display = 'block';
             document.body.classList.add('modal-open');
+            modal.style.display = 'block';
             
-            // Initialize gallery if it's the gallery modal
+            // Reset scroll position
+            modal.scrollTop = 0;
+            
+            // Initialize gallery if needed
             if (modalId === 'gallery-modal') {
                 setTimeout(initializeGallery, 100);
             }
             
-            // Reset scroll position
-            modal.scrollTop = 0;
+            // Ensure modal content is visible
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.opacity = '0';
+                setTimeout(() => {
+                    modalContent.style.opacity = '1';
+                }, 10);
+            }
         }
     }
 
@@ -110,11 +119,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close button functionality for all modals
     document.querySelectorAll('.close').forEach(closeBtn => {
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const modal = closeBtn.closest('.modal');
             if (modal) {
-                modal.style.display = 'none';
-                document.body.classList.remove('modal-open');
+                closeModal(modal.id);
             }
         });
     });
@@ -122,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close modal when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
-            e.target.style.display = 'none';
-            document.body.classList.remove('modal-open');
+            closeModal(e.target.id);
         }
     });
 
