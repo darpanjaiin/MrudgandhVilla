@@ -1231,522 +1231,130 @@ body {
 }
 
 .booking-options {
-    display: grid;
-    gap: 20px;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
     width: 100%;
-}
-
-.booking-platform {
-    padding: 20px;
-    border-radius: 12px;
-    background: #f8f9fa;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.booking-platform:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .booking-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    width: 100%;
 }
 
-.booking-platform i {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: #2c3e50;
+.booking-platform {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+    background: white;
+    gap: 15px;
+    width: 100%;
 }
 
-.booking-platform h3 {
-    margin: 10px 0;
-    color: #2c3e50;
+.booking-platform:active {
+    transform: scale(0.98);
 }
 
-.booking-platform p {
-    color: #666;
-    font-size: 0.9em;
+.platform-icon-wrapper {
+    width: 40px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Specific styling for Airbnb icon */
-.booking-platform .fa-airbnb {
-    color: #ff385c;
+.booking-platform i.fab.fa-airbnb {
+    font-size: 2rem;
+    color: #ff5a5f;
 }
 
 .platform-icon {
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    margin-bottom: 8px;
+}
+
+.booking-platform-content {
+    flex: 1;
+}
+
+.booking-platform h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.booking-platform p {
+    margin: 2px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Collapsible Menu Styles (for both Rules and Amenities) */
+.rule-category,
+.amenity-category {
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
 }
 
 .category-header {
+    padding: 16px 0;
+    background: white;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.category-header:hover {
-    background: #e9ecef;
 }
 
 .category-header h3 {
     margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .category-header i {
     transition: transform 0.3s ease;
-}
-
-.category-header.active i {
-    transform: rotate(-180deg);
+    color: #666;
 }
 
 .category-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding: 0 15px;
-}
-
-.category-content.show {
-    max-height: 1000px; /* Adjust based on content */
-    padding: 15px;
-}
-
-.amenity-category {
-    margin-bottom: 10px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
-
-.location-link {
-    color: #666;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.location-link:hover {
-    color: #000;
-}
-
-.attraction-item {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.attraction-item h4 {
-    color: #2c3e50;
-    margin-bottom: 8px;
-}
-
-.attraction-item p {
-    color: #666;
-    font-size: 0.9em;
-    margin: 0;
-}
-
-.transport-options {
-    list-style: none;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
     padding: 0;
 }
 
-.transport-options li {
-    margin-bottom: 12px;
-    padding-left: 24px;
-    position: relative;
+.rule-category.active .category-content,
+.amenity-category.active .category-content {
+    max-height: 2000px;
+    padding: 0 0 16px 0;
 }
 
-.transport-options li strong {
-    color: #2c3e50;
+.rule-category.active .category-header i,
+.amenity-category.active .category-header i {
+    transform: rotate(180deg);
 }
 
-.rules-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Remove border from last items */
+.rule-category:last-child,
+.amenity-category:last-child {
+    border-bottom: none;
 }
 
-.rule-category {
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
-
-.address-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.address-content {
-    padding: 20px;
-}
-
-.map-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #4285f4;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.map-button:hover {
-    background: #3367d6;
-}
-
-.map-preview {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.lake-feature {
-    position: relative;
-    margin: -20px -20px 20px -20px;
-    overflow: hidden;
-}
-
-.lake-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.lake-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
-    padding: 20px;
-}
-
-.lake-icon {
-    background: rgba(255,255,255,0.2);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.lake-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 24px;
-}
-
-.lake-info p {
+/* Content styling */
+.category-content ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    opacity: 0.9;
 }
 
-.attractions-grid {
-    display: grid;
-    gap: 15px;
-}
-
-.attraction-card {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-.attraction-card h4 {
-    margin: 0 0 5px 0;
-    color: #2c3e50;
-}
-
-.distance {
-    color: #666;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 15px 0;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
-    height: 200px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-item p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 12px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover p {
-    opacity: 1;
-}
-
-@media screen and (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-item {
-        height: 250px;
-    }
-}
-
-/* Lightbox styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 2000;
-    padding: 20px;
-}
-
-.lightbox.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.reviews-section {
-    padding: 20px 0;
-}
-
-.review-platform {
-    background: #f8f9fa;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-    text-align: center;
-}
-
-.review-platform:hover {
-    transform: translateY(-5px);
-}
-
-.review-link {
-    text-decoration: none;
-    color: inherit;
-    padding: 30px;
-    display: block;
-}
-
-.review-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.star-rating {
-    color: #FFD700;
-    font-size: 24px;
-    letter-spacing: 5px;
-}
-
-.review-content h3 {
-    margin: 0;
-    color: #2c3e50;
-    font-size: 24px;
-}
-
-.review-content p {
-    color: #666;
-    margin: 0;
-    max-width: 500px;
-    line-height: 1.6;
-}
-
-.review-button {
-    margin-top: 20px;
-    background: #4285f4;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.review-button:hover {
-    background: #3367d6;
-}
-
-.review-button i {
-    font-size: 0.9em;
-}
-
-/* Update modal content alignment */
-.modal-sections {
-    overflow-y: auto;
-    max-height: calc(100vh - 150px);
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Center align cards and images */
-.experience-cards,
-.attractions-grid,
-.amenities-grid,
-.gallery-grid,
-.service-grid,
-.adventure-grid,
-.booking-options {
-    width: 100%;
-    display: grid;
-    gap: 20px;
-    justify-items: center;
-}
-
-.exp-card,
-.attraction-card,
-.amenity-category,
-.gallery-item,
-.service-card,
-.adventure-card,
-.booking-platform {
-    width: 100%;
-    max-width: 350px;
-}
-
-/* Center align images within cards */
-.exp-image,
-.amenity-image,
-.gallery-item img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Center align modal headings */
-.modal-content h2,
-.modal-section h3 {
-    text-align: center;
-}
-
-/* Update footer buttons */
-.footer-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 0 12px;
-    margin-top: 32px;
-}
-
-#book-now-footer-btn {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    border-radius: 8px;
-    background: #4285f4;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    transition: all 0.2s ease;
-    font-family: var(--system-font);
-    letter-spacing: -0.2px;
-    cursor: pointer;
-}
-
-#book-now-footer-btn:hover {
-    background: #3367d6;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-#book-now-footer-btn:active {
-    transform: translateY(0);
-    background: #2850a7;
-}
-
-#share-btn {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    border-radius: 8px;
-    background: #f8f8f8;
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-    transition: background-color 0.2s ease;
-    font-family: var(--system-font);
-    letter-spacing: -0.2px;
+.category-content li,
+.category-content p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
 }
   

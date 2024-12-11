@@ -88,30 +88,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize collapsible sections
-    const categoryHeaders = document.querySelectorAll('.category-header');
-    categoryHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            content.classList.toggle('show');
-
-            if (this.classList.contains('active')) {
-                categoryHeaders.forEach(otherHeader => {
-                    if (otherHeader !== this) {
-                        otherHeader.classList.remove('active');
-                        otherHeader.nextElementSibling.classList.remove('show');
+    // Function to handle collapsible sections
+    function initializeCollapsible(selector) {
+        const categories = document.querySelectorAll(selector);
+        
+        categories.forEach(category => {
+            const header = category.querySelector('.category-header');
+            const content = category.querySelector('.category-content');
+            
+            header.addEventListener('click', () => {
+                // Close all other categories
+                categories.forEach(otherCategory => {
+                    if (otherCategory !== category && otherCategory.classList.contains('active')) {
+                        otherCategory.classList.remove('active');
+                        otherCategory.querySelector('.category-content').style.maxHeight = null;
                     }
                 });
-            }
+                
+                // Toggle current category
+                category.classList.toggle('active');
+                
+                if (category.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
         });
-    });
-
-    // Open first category by default
-    if (categoryHeaders.length > 0) {
-        categoryHeaders[0].classList.add('active');
-        categoryHeaders[0].nextElementSibling.classList.add('show');
     }
+
+    // Initialize collapsible menus for both rules and amenities
+    initializeCollapsible('.rule-category');
+    initializeCollapsible('.amenity-category');
 
     // Gallery functionality
     function initializeGallery() {
