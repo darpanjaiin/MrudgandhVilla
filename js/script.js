@@ -93,16 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // When opening a modal
     function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = "flex";
-        modal.classList.add('active');
+        document.getElementById(modalId).style.display = 'block';
+        document.body.classList.add('modal-open');
     }
 
     // When closing a modal
     function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = "none";
-        modal.classList.remove('active');
+        document.getElementById(modalId).style.display = 'none';
+        document.body.classList.remove('modal-open');
     }
 
     // Add this with your other modal-related code
