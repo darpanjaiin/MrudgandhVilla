@@ -20,13 +20,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: var(--text-color);
     line-height: 1.6;
-    background-color: white;
     margin: 0;
     overflow-x: hidden;
     letter-spacing: -0.2px;
     display: flex;
     justify-content: center;
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    min-height: 100vh;
 }
 
 .hero-image {
@@ -262,8 +262,11 @@ h1 {
 /* Modal Content Scrolling */
 .modal-sections {
     overflow-y: auto;
-    max-height: calc(100vh - 150px); /* Adjust based on header height */
+    max-height: calc(100vh - 150px);
     padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Responsive Adjustments */
@@ -1231,26 +1234,27 @@ body {
     display: grid;
     gap: 20px;
     padding: 20px 0;
+    width: 100%;
 }
 
 .booking-platform {
     padding: 20px;
-    border-radius: 10px;
-    background: #f5f5f5;
+    border-radius: 12px;
+    background: #f8f9fa;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .booking-platform:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    background: #e9e9e9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .booking-link {
     text-decoration: none;
     color: inherit;
+    display: block;
 }
 
 .booking-platform i {
@@ -1641,5 +1645,108 @@ body {
 
 .review-button i {
     font-size: 0.9em;
+}
+
+/* Update modal content alignment */
+.modal-sections {
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Center align cards and images */
+.experience-cards,
+.attractions-grid,
+.amenities-grid,
+.gallery-grid,
+.service-grid,
+.adventure-grid,
+.booking-options {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+}
+
+.exp-card,
+.attraction-card,
+.amenity-category,
+.gallery-item,
+.service-card,
+.adventure-card,
+.booking-platform {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Center align images within cards */
+.exp-image,
+.amenity-image,
+.gallery-item img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Center align modal headings */
+.modal-content h2,
+.modal-section h3 {
+    text-align: center;
+}
+
+/* Update footer buttons */
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 0 12px;
+    margin-top: 32px;
+}
+
+#book-now-footer-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #4285f4;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-family: var(--system-font);
+    letter-spacing: -0.2px;
+    cursor: pointer;
+}
+
+#book-now-footer-btn:hover {
+    background: #3367d6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#book-now-footer-btn:active {
+    transform: translateY(0);
+    background: #2850a7;
+}
+
+#share-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f8f8f8;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    font-family: var(--system-font);
+    letter-spacing: -0.2px;
 }
   
