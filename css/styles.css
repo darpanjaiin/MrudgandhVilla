@@ -1662,23 +1662,30 @@ a {
 @media screen and (max-width: 480px) {
     .modal {
         padding: 0;
-    }
-    
-    .modal-content {
-        margin: 0;
-        min-height: 100%;
-        border-radius: 0;
-        padding-bottom: 40px; /* Extra padding at bottom for better scrolling */
+        display: flex;
+        flex-direction: column;
     }
 
-    /* Ensure content is scrollable */
-    .modal-sections,
-    .amenities-grid,
-    .gallery-grid,
-    .booking-options {
-        -webkit-overflow-scrolling: touch;
-        overflow-y: auto;
+    .modal-content {
+        margin: 0;
+        border-radius: 0;
+        min-height: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-content.modal-large {
         padding-bottom: 40px;
+    }
+
+    /* Ensure content stays within modal */
+    .gallery-grid,
+    .amenities-grid,
+    .modal-sections,
+    .booking-options {
+        flex: 1;
+        background: white;
     }
 
     /* Fix sticky header */
@@ -1691,23 +1698,29 @@ a {
         z-index: 2;
     }
 
-    /* Ensure close button stays visible */
+    /* Keep close button visible */
     .close {
         position: fixed;
         top: 10px;
         right: 10px;
         background: rgba(255,255,255,0.9);
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 1001;
+    }
+}
+
+/* Desktop specific styles */
+@media screen and (min-width: 481px) {
+    .modal {
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
     }
 
-    /* Improve touch scrolling for all scrollable containers */
-    .category-content,
-    .modal-section,
-    .reviews-section,
-    .booking-options {
+    .modal-content {
+        margin: 40px auto;
+        max-height: calc(100vh - 80px);
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
     }
 }
 
