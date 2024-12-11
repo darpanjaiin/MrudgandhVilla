@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal mapping
     const modalMapping = {
         'wifi-btn': 'wifi-modal',
-        'gallery-btn': 'gallery-modal',
+        'reviews-btn': 'reviews-modal',
         'nearby-btn': 'nearby-modal',
         'emergency-btn': 'emergency-modal',
         'rules-btn': 'rules-modal',
         'specials-btn': 'specials-modal',
         'host-favorites': 'host-favorites-modal',
         'amenities-card': 'amenities-modal',
-        'checkout-card': 'checkout-modal',
+        'gallery-card': 'gallery-modal',
         'feedback-btn': 'feedback-modal'
     };
 
