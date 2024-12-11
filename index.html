@@ -16,6 +16,7 @@
     <link rel="preload" href="assets/heroimage.jpg" as="image">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="js/script.js" as="script">
+    <link rel="stylesheet" href="css/modal-updates.css">
 </head>
 <body>
     <div class="container">
@@ -119,25 +120,22 @@
             <div class="booking-options">
                 <a href="https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1733899578_P3ilALMMs3jNQJbM" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <i class="fab fa-airbnb"></i>
+                        <i class="fab fa-airbnb booking-icon"></i>
                         <h3>Airbnb</h3>
-                        <p>Book on Airbnb</p>
                     </div>
                 </a>
                 
                 <a href="https://www.booking.com/hotel/in/mrudugandh-forest-villa.en-gb.html" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <img src="assets/booking.png" alt="Booking.com" class="platform-icon">
+                        <img src="assets/booking.png" alt="Booking.com" class="booking-icon">
                         <h3>Booking.com</h3>
-                        <p>Book on Booking.com</p>
                     </div>
                 </a>
                 
                 <a href="https://www.makemytrip.com/hotels/mrudugandh_villa-details-mulshi.html" target="_blank" class="booking-link">
                     <div class="booking-platform">
-                        <img src="assets/mmt.png" alt="MakeMyTrip" class="platform-icon">
+                        <img src="assets/mmt.png" alt="MakeMyTrip" class="booking-icon">
                         <h3>Make My Trip</h3>
-                        <p>Book on MakeMyTrip</p>
                     </div>
                 </a>
             </div>
@@ -150,59 +148,81 @@
             <h2>Property Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/gallery/1.png" alt="Property View" loading="lazy"
-                         width="300" height="200">
-                    <p>Property View</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/1.png" alt="Property View" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Property View</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy"
-                         width="300" height="200">
-                    <p>Pool Area</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/infinity_pool.jpg" alt="Pool Area" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Pool Area</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy"
-                         width="300" height="200">
-                    <p>Tree House</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/th.jpg" alt="Tree house" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Tree House</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/common.png" alt="Living Space" loading="lazy"
-                         width="300" height="200">
-                    <p>Living Space</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/common.png" alt="Living Space" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Living Space</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy"
-                         width="300" height="200">
-                    <p>Bedroom</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Bedroom</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy"
-                         width="300" height="200">
-                    <p>Outdoor Dining</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/dining_table.jpg" alt="Dining Area" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Outdoor Dining</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy"
-                         width="300" height="200">
-                    <p>Indoor Games</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/a1.jpg" alt="Indoor Games1" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Indoor Games</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy"
-                         width="300" height="200">
-                    <p>Indoor Games</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/a2.png" alt="Indoor Games2" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Indoor Games</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy"
-                         width="300" height="200">
-                    <p>Room View</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Room View</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy"
-                         width="300" height="200">
-                    <p>Outdoor Space</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/stairs.jpg" alt="Outdoor Space" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Outdoor Space</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy"
-                         width="300" height="200">
-                    <p>Balcony</p>
+                    <div class="image-container">
+                        <img src="assets/gallery/balcony.jpg" alt="Balcony" loading="lazy"
+                             width="300" height="200">
+                        <p class="image-caption">Balcony</p>
+                    </div>
                 </div>
                 <!-- Add more gallery items based on your images -->
             </div>
@@ -474,7 +494,7 @@
             
             <div class="modal-sections">
                 <div class="modal-section highlight-section">
-                    <h3>🌟‍♂️ Pool Area</h3>
+                    <h3>‍♂️ Pool Area</h3>
                     <div class="experience-cards">
                         <div class="exp-card">
                             <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image" loading="lazy"
