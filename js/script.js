@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modal) {
             modal.style.display = 'block';
             document.body.classList.add('modal-open');
+            
+            // Initialize collapsible menus when rules or amenities modal opens
+            if (modalId === 'rules-modal' || modalId === 'amenities-modal') {
+                initializeCollapsible(modal);
+            }
         }
     }
 
@@ -88,38 +93,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Function to handle collapsible sections
-    function initializeCollapsible(selector) {
-        const categories = document.querySelectorAll(selector);
+    // Collapsible menu functionality
+    function initializeCollapsible(modalElement) {
+        const headers = modalElement.querySelectorAll('.category-header');
         
-        categories.forEach(category => {
-            const header = category.querySelector('.category-header');
-            const content = category.querySelector('.category-content');
+        headers.forEach(header => {
+            // Remove existing event listeners
+            header.replaceWith(header.cloneNode(true));
+            const newHeader = modalElement.querySelector(`[data-category="${header.dataset.category}"]`);
             
-            header.addEventListener('click', () => {
-                // Close all other categories
-                categories.forEach(otherCategory => {
-                    if (otherCategory !== category && otherCategory.classList.contains('active')) {
+            newHeader.addEventListener('click', function() {
+                const category = this.parentElement;
+                const content = category.querySelector('.category-content');
+                const icon = this.querySelector('i');
+                
+                // Close other categories
+                const otherCategories = modalElement.querySelectorAll('.rule-category.active, .amenity-category.active');
+                otherCategories.forEach(otherCategory => {
+                    if (otherCategory !== category) {
                         otherCategory.classList.remove('active');
-                        otherCategory.querySelector('.category-content').style.maxHeight = null;
+                        otherCategory.querySelector('.category-content').style.display = 'none';
+                        otherCategory.querySelector('i').style.transform = 'rotate(0deg)';
                     }
                 });
                 
                 // Toggle current category
                 category.classList.toggle('active');
-                
                 if (category.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
                 } else {
-                    content.style.maxHeight = null;
+                    content.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
                 }
             });
         });
     }
-
-    // Initialize collapsible menus for both rules and amenities
-    initializeCollapsible('.rule-category');
-    initializeCollapsible('.amenity-category');
 
     // Gallery functionality
     function initializeGallery() {
