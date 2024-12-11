@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrudhgandh PoolVilla</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta property="og:image" content="assets/favicon.png" />
+    <meta property="og:title" content="Joey's Inn - Digital Guidebook" />
+    <meta property="og:description" content="Collect moments, not things" />
+</head>
+<body>
+    <div class="container">
+        <div class="hero-image">
+            <img src="assets/heroimage.jpg" alt="Joey's Inn Exterior" loading="eager">
+        </div>
+        <header>
+            <h1>Welcome to<br>Mrudgandh PoolVilla</h1>
+            <p class="tagline">
+                <a href="https://g.co/kgs/MKdv7SD" target="_blank" class="location-link">
+                    <i class="fas fa-map-marker-alt"></i> Mulshi, Pune
+                </a>
+            </p>
+        </header>
+
+        <div class="quick-access-grid">
+            <div class="grid-item" id="book-now-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Book<br>Now</h3>
+            </div>
+            <div class="grid-item" id="howto-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>How-to's</h3>
+            </div>
+            <div class="grid-item" id="nearby-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h3>Location</h3>
+            </div>
+            <div class="grid-item" id="emergency-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-phone-volume"></i>
+                </div>
+                <h3>Emergency<br>Contact</h3>
+            </div>
+            <div class="grid-item" id="rules-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h3>Home<br>Rules</h3>
+            </div>
+            <div class="grid-item" id="specials-btn">
+                <div class="icon-wrapper">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Local<br>Specials</h3>
+            </div>
+        </div>
+
+        <section class="featured-sections">
+            <div class="feature-card" id="host-favorites">
+                <img src="assets/hostfav.jpg" alt="Host favorites">
+                <div class="card-content">
+                    <h2>Host favorites</h2>
+                    <p>Local recommendations</p>
+                </div>
+            </div>
+
+            <div class="feature-card" id="amenities-card">
+                <img src="assets/amenities.jpg" alt="Amenities">
+                <div class="card-content">
+                    <h2>Amenities</h2>
+                    <p>Find what's inside</p>
+                </div>
+            </div>
+
+            <div class="feature-card" id="checkout-card">
+                <img src="assets/checkout.jpg" alt="Checking out">
+                <div class="card-content">
+                    <h2>Checking out</h2>
+                    <p>Quick and easy checkout tips</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="quote">It is good to have an end to journey toward; but it is the journey that matters, in the end</p>
+            <div class="footer-buttons">
+                <button id="feedback-btn">Leave a feedback</button>
+                <button id="share-btn">Share property</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="book-now-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Stay</h2>
+            <div class="booking-options">
+                <a href="https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1733899578_P3ilALMMs3jNQJbM" target="_blank" class="booking-link">
+                    <div class="booking-platform">
+                        <i class="fab fa-airbnb"></i>
+                        <h3>Airbnb</h3>
+                        <p>Book on Airbnb</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.booking.com/hotel/in/mrudugandh-forest-villa.en-gb.html" target="_blank" class="booking-link">
+                    <div class="booking-platform">
+                        <img src="assets/booking.png" alt="Booking.com" class="platform-icon">
+                        <h3>Booking.com</h3>
+                        <p>Book on Booking.com</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.makemytrip.com/hotels/mrudugandh_villa-details-mulshi.html" target="_blank" class="booking-link">
+                    <div class="booking-platform">
+                        <img src="assets/mmt.png" alt="MakeMyTrip" class="platform-icon">
+                        <h3>Make My Trip</h3>
+                        <p>Book on MakeMyTrip</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="howto-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>How-to's Guide</h2>
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <h3>Washing Machine Guide</h3>
+                    <div class="video-container">
+                        <video controls width="100%" poster="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=500">
+                            <source src="https://cdn.coverr.co/videos/coverr-using-washing-machine-2956/1080p.mp4" type="video/mp4">
+                            Your browser doesn't support video playback.
+                        </video>
+                    </div>
+                    <div class="instructions">
+                        <p>1. Load capacity: 7kg maximum</p>
+                        <p>2. Detergent: Use drawer compartment marked "II"</p>
+                        <p>3. Quick wash: 30 mins at 30°C (for lightly soiled clothes)</p>
+                        <p>4. Regular wash: 60 mins at 40°C (for normal loads)</p>
+                        <p>5. Spin speed: 800 rpm recommended</p>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Kitchen Essentials 🍳</h3>
+                    <div class="kitchen-guide">
+                        <div class="guide-item">
+                            <p>☕️ Coffee Maker</p>
+                            <ul>
+                                <li>Pods in left drawer</li>
+                                <li>Fresh beans in airtight container</li>
+                                <li>Grinder available</li>
+                            </ul>
+                        </div>
+                        <div class="guide-item">
+                            <p>🍽️ Dishwasher</p>
+                            <ul>
+                                <li>Tablets under sink</li>
+                                <li>Run at night for better rates</li>
+                                <li>Eco mode recommended</li>
+                            </ul>
+                        </div>
+                        <div class="guide-item">
+                            <p>🔥 Induction Stove</p>
+                            <ul>
+                                <li>Special pots required</li>
+                                <li>Instructions on wall</li>
+                                <li>Child lock enabled</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Climate Control 🌡️</h3>
+                    <div class="climate-guide">
+                        <div class="temp-settings">
+                            <p><strong>Recommended Settings:</strong></p>
+                            <ul>
+                                <li>Summer: 23-25°C</li>
+                                <li>Winter: 20-22°C</li>
+                                <li>Night: 2°C lower than day</li>
+                            </ul>
+                        </div>
+                        <div class="quick-tips">
+                            <p><strong>Tips:</strong></p>
+                            <ul>
+                                <li>Use 'Sleep Mode' at night (moon icon)</li>
+                                <li>Auto mode best for efficiency</li>
+                                <li>Extra blankets in closet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>💡 Power Backup Guide</h3>
+                    <ul>
+                        <li>Automatic backup kicks in within 10 seconds</li>
+                        <li>Emergency lights in every room</li>
+                        <li>Backup lasts for 8 hours</li>
+                        <li>Important plugs marked with red dots have backup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nearby-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Address & Best way to reach</h2>
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <div class="address-card">
+                        <div class="address-content">
+                            <h3>📍 Property Address</h3>
+                            <p>Mulshi.<br> Just 40 km from Pune and 97 km from Panvel, Mumbai</p>
+                            <a href="https://www.google.com/maps/place/Mrudgandh+Pool+Villa/@18.5655451,73.5444796,15z/data=!4m9!3m8!1s0x3bc2a70007b0d6e3:0x409fb794b638e8e7!5m2!4m1!1i2!8m2!3d18.5655451!4d73.5444796!16s%2Fg%2F11vyr3cbwh?entry=ttu" 
+                               target="_blank" 
+                               class="map-button">
+                                <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+                            </a>
+                        </div>
+                        <div class="map-preview">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.0679923011655!2d73.54447961441547!3d18.565545087384695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2a70007b0d6e3%3A0x409fb794b638e8e7!2sMrudgandh%20Pool%20Villa!5e0!3m2!1sen!2sin!4v1659912345678!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>🚗 How to Reach</h3>
+                    <ul class="transport-options">
+                        <li>
+                            <strong>By Bus:</strong> Kule Bus Stand (5 km) is the closest bus stand
+                        </li>
+                        <li>
+                            <strong>By Train:</strong> Chinchwad Junction (36.7 km) is the nearest railway station
+                        </li>
+                        <li>
+                            <strong>By Air:</strong> Pune International Airport (50.2 km) is the closest airport
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="emergency-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Emergency Contacts</h2>
+            <div class="modal-sections">
+                <div class="modal-section emergency">
+                    <h3>Emergency Services</h3>
+                    <p>• Police: 100</p>
+                    <p>• Ambulance: 108</p>
+                    <p>• Fire Brigade: 104</p>
+                    <p>• Pune Municipal Corporation: 1800-1030-222</p>
+                    <p>• Disaster Management Control Room: 1077</p>
+                    <p>• Child Helpline: 1098</p>
+                    <p>• Women Helpline: 1091</p>
+                    <p>• NIC Service Desk: 1800-111-555</p>
+                    <p>• Corona Virus Central Helpline: 011-23978043/46</p>
+                    <p>• Corona Virus Maharashtra Helpline: 020-26127394</p>
+                    <p>• Host Contact: +91 9850769955</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rules-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>House Rules</h2>
+            <div class="rules-grid">
+                <div class="rule-category">
+                    <div class="category-header">
+                        <h3>⏰ Check-in/Check-out</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="category-content">
+                        <p>• Check-in: 2 PM</p>
+                        <p>• Check-out: 11 AM</p>
+                    </div>
+                </div>
+
+                <div class="rule-category">
+                    <div class="category-header">
+                        <h3>👥 Guest Profile</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="category-content">
+                        <p>• Groups with only male guests are not allowed</p>
+                        <p>• Unmarried couples are not allowed</p>
+                        <p>• Guests below 18 years of age are not allowed</p>
+                    </div>
+                </div>
+
+                <!-- Add other sections similarly -->
+            </div>
+        </div>
+    </div>
+
+    <div id="specials-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Local Attractions</h2>
+            
+            <div class="lake-feature">
+                <img src="assets/lake.jpg" alt="Mulshi Lake" class="lake-image">
+                <div class="lake-info">
+                    <div class="lake-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>5-min walk to the lake</h3>
+                    <p>This home is by Mulshi Lake.</p>
+                </div>
+            </div>
+
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <h3>🏛️ Other Nearby Attractions</h3>
+                    <div class="attractions-grid">
+                        <div class="attraction-card">
+                            <h4>Bhaja Buddhist Caves</h4>
+                            <p class="distance">33.2 km away</p>
+                            <p>22 landmark rock-cut caves featuring old carvings & a large shrine, dating to the 2nd century BCE</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h4>Sindhudurg Fort</h4>
+                            <p class="distance">66.7 km away</p>
+                            <p>Historic hilltop fort with a memorial for 17th-century emperors, plus a temple to the goddess Kali</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h4>Karla Buddha Caves</h4>
+                            <p class="distance">43 km away</p>
+                            <p>Ancient rock-carved cave temple housing a monastery, soaring halls, statues & intricate columns</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h4>Pataleshwar Temple</h4>
+                            <p class="distance">42.8 km away</p>
+                            <p>Dedicated to the Hindu god Shiva, this compact rock-cut cave temple dates to the 8th century</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h4>Durga Tekdi</h4>
+                            <p class="distance">43.4 km away</p>
+                            <p>Hillside green space with a temple offering a kids' playground, lawns for picnicking & city views</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Leave a Feedback</h2>
+            <form id="feedback-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Feedback" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="host-favorites-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Property Features</h2>
+            
+            <div class="modal-sections">
+                <div class="modal-section highlight-section">
+                    <h3>🌟‍♂️ Pool Area</h3>
+                    <div class="experience-cards">
+                        <div class="exp-card">
+                            <img src="assets/infinity_pool.jpg" alt="Infinity Pool" class="exp-image">
+                            <h4>Infinity Swimming Pool</h4>
+                            <ul>
+                                <li>30 ft. X 16 ft. pool size</li>
+                                <li>Outdoor Shower area</li>
+                                <li>Gazebo with panoramic views</li>
+                                <li>Outdoor Seating</li>
+                                <li>2 dedicated washrooms</li>
+                            </ul>
+                            <p class="note">Located adjacent to Bed#4 on the 4th level</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>🌅 Attached Deck</h3>
+                    <div class="experience-cards">
+                        <div class="exp-card">
+                            <img src="assets/dining_table.jpg" alt="Outdoor Dining" class="exp-image">
+                            <h4>Outdoor Living Space</h4>
+                            <ul>
+                                <li>Spacious Deck Area</li>
+                                <li>Outdoor Dining Setup</li>
+                                <li>BBQ Facilities</li>
+                                <li>Campfire Setup</li>
+                                <li>Comfortable Outdoor Seating</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>🎮 Tree House</h3>
+                    <div class="experience-cards">
+                        <div class="exp-card">
+                            <img src="assets/external2.jpg" alt="Tree House" class="exp-image">
+                            <h4>Independent Tree House Bedroom</h4>
+                            <ul>
+                                <li>Located on Fourth level and comes with a pool view</li>
+                                <li>Private attached washroom</li>
+                                <li>25 steps from 3rd level</li>
+                                <li>Independent access</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="amenities-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Property Amenities</h2>
+            
+            <div class="amenities-grid">
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>🛌 Popular Amenities</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Kitchenette</li>
+                        <li>Bonfire</li>
+                        <li>Luggage Storage</li>
+                        <li>Outdoor Sports</li>
+                        <li>Tours and Treks</li>
+                        <li>Housekeeping</li>
+                        <li>Free Wi-Fi</li>
+                        <li>Living Room</li>
+                        <li>Caretaker</li>
+                        <li>Fireplace</li>
+                        <li>Seating Area</li>
+                        <li>Power Backup</li>
+                        <li>Luggage Assistance</li>
+                        <li>Barbeque</li>
+                        <li>Indoor Games</li>
+                        <li>Free Parking</li>
+                        <li>Balcony/Terrace</li>
+                        <li>Dining Area</li>
+                        <li>Air Conditioning</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>🏠 Basic Facilities</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Kitchenette</li>
+                        <li>Housekeeping</li>
+                        <li>Bathroom</li>
+                        <li>Umbrellas</li>
+                        <li>Free Parking</li>
+                        <li>Air Conditioning</li>
+                        <li>Ironing Service</li>
+                        <li>Room Service</li>
+                        <li>Power Backup</li>
+                        <li>Free Wi-Fi</li>
+                        <li>Refrigerator</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>🍽️ Food and Drinks</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Barbeque</li>
+                        <li>Dining Area</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>🔒 Safety and Security</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Safe</li>
+                        <li>Security</li>
+                        <li>CCTV</li>
+                        <li>Fire Extinguishers</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>📺 Media and Technology</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>TV</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>🛎️ General Services</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Caretaker</li>
+                        <li>Electrical Sockets</li>
+                        <li>Luggage Storage</li>
+                        <li>Luggage Assistance</li>
+                    </ul>
+                </div>
+
+                <div class="amenity-category">
+                    <div class="category-header">
+                        <h3>���� Common Area</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="category-content">
+                        <li>Living Room</li>
+                        <li>Balcony/Terrace</li>
+                        <li>Fireplace</li>
+                        <li>Sun Deck</li>
+                        <li>Seating Area</li>
+                        <li>Reception</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <h2>Checking Out Guide</h2>
+            
+            <div class="modal-sections">
+                <div class="checkout-section">
+                    <h3>🕐 Checkout Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Night Before</h4>
+                            <ul>
+                                <li>Pack your belongings</li>
+                                <li>Collect all valuables</li>
+                                <li>Set alarm for checkout time</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Morning Of</h4>
+                            <ul>
+                                <li>Checkout time: 11:00 AM</li>
+                                <li>Breakfast ends at 10:00 AM</li>
+                                <li>Housekeeping final check at 10:30 AM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>📋 Checkout Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item">
+                            <h4>Kitchen</h4>
+                            <ul>
+                                <li>Empty refrigerator</li>
+                                <li>Clean used utensils</li>
+                                <li>Dispose of garbage</li>
+                                <li>Turn off all appliances</li>
+                            </ul>
+                        </div>
+                        <div class="checklist-item">
+                            <h4>Rooms</h4>
+                            <ul>
+                                <li>Collect all belongings</li>
+                                <li>Place used towels in bathroom</li>
+                                <li>Turn off AC/heater</li>
+                                <li>Close all windows</li>
+                            </ul>
+                        </div>
+                        <div class="checklist-item">
+                            <h4>Final Steps</h4>
+                            <ul>
+                                <li>Return keys to lockbox</li>
+                                <li>Close and lock all doors</li>
+                                <li>Complete feedback form</li>
+                                <li>Text host after leaving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>🚗 Transportation Options</h3>
+                    <div class="transport-options">
+                        <div class="transport-item">
+                            <h4>Airport Transfer</h4>
+                            <p>• Pre-book through reception</p>
+                            <p>• Fixed rate: ₹1200</p>
+                            <p>• Book 4 hours in advance</p>
+                        </div>
+                        <div class="transport-item">
+                            <h4>Local Taxi</h4>
+                            <p>• Ola/Uber available</p>
+                            <p>• Auto stand nearby</p>
+                            <p>• Reception can arrange</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>💡 Important Notes</h3>
+                    <div class="notes-container">
+                        <div class="note">
+                            <h4>Late Checkout</h4>
+                            <p>• Request 24 hours before</p>
+                            <p>• Subject to availability</p>
+                            <p>• Additional charges may apply</p>
+                        </div>
+                        <div class="note">
+                            <h4>Luggage Storage</h4>
+                            <p>• Available at reception</p>
+                            <p>• Free for same day</p>
+                            <p>• Maximum 8 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
