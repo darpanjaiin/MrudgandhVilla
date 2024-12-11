@@ -199,4 +199,35 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('gallery-btn').addEventListener('click', () => {
         setTimeout(initializeGallery, 100);
     });
+
+    // Add this to your existing DOMContentLoaded event listener
+    function initializeClickHandlers() {
+        // Improve click/touch handling for grid items
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.click();
+            }, { passive: false });
+        });
+
+        // Improve gallery click handling
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.click();
+            }, { passive: false });
+        });
+
+        // Improve review button click handling
+        document.querySelector('.review-button')?.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.closest('a').click();
+        }, { passive: false });
+    }
+
+    // Call the function when the document loads
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeClickHandlers();
+        // ... rest of your existing code
+    });
 }); 
