@@ -277,4 +277,50 @@ document.addEventListener('DOMContentLoaded', function() {
             openModal('book-now-modal');
         }, { passive: false });
     }
+
+    // Improve touch handling for review button and all links
+    function initializeTouchHandlers() {
+        // Handle review button
+        const reviewButton = document.querySelector('.review-button');
+        if (reviewButton) {
+            reviewButton.addEventListener('click', handleReviewClick);
+            reviewButton.addEventListener('touchstart', handleReviewTouch, { passive: false });
+        }
+
+        // Handle all external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('touchstart', handleLinkTouch, { passive: false });
+        });
+
+        // Handle booking platform links
+        document.querySelectorAll('.booking-link').forEach(link => {
+            link.addEventListener('touchstart', handleLinkTouch, { passive: false });
+        });
+    }
+
+    function handleReviewClick(e) {
+        e.preventDefault();
+        const link = this.closest('a');
+        if (link) {
+            window.open(link.href, '_blank');
+        }
+    }
+
+    function handleReviewTouch(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const link = this.closest('a');
+        if (link) {
+            window.open(link.href, '_blank');
+        }
+    }
+
+    function handleLinkTouch(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open(this.href, '_blank');
+    }
+
+    // Initialize touch handlers
+    initializeTouchHandlers();
 }); 

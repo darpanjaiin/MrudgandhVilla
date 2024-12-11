@@ -1558,4 +1558,69 @@ body {
 .review-button i {
     font-size: 0.9em;
 }
+
+/* Improve touch targets for review button */
+.review-button {
+    margin-top: 20px;
+    background: #4285f4;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    min-width: 44px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Improve touch targets for all links */
+a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure review link container is clickable */
+.review-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 30px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Add active state for better touch feedback */
+.review-button:active {
+    background: #3367d6;
+    transform: scale(0.98);
+}
+
+/* Improve booking platform touch targets */
+.booking-link {
+    display: block;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.booking-platform {
+    min-height: 44px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add visual feedback for touch interactions */
+@media (hover: none) {
+    .review-button:active,
+    .booking-platform:active,
+    .grid-item:active {
+        opacity: 0.7;
+    }
+}
   
