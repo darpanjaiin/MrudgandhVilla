@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'amenities-card': 'amenities-modal',
         'gallery-btn': 'gallery-modal',
         'gallery-card': 'gallery-modal',
-        'feedback-btn': 'feedback-modal'
+        'footer-book-btn': 'book-now-modal'
     };
 
     // Function to open modal
@@ -239,34 +239,42 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(initializeGallery, 100);
     });
 
-    // Add this to your existing DOMContentLoaded event listener
-    function initializeClickHandlers() {
-        // Improve click/touch handling for grid items
-        document.querySelectorAll('.grid-item').forEach(item => {
-            item.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.click();
-            }, { passive: false });
-        });
+    // Improve touch handling for all grid items
+    document.querySelectorAll('.grid-item').forEach(item => {
+        // Remove any existing listeners first
+        item.removeEventListener('touchstart', handleTouch);
+        item.removeEventListener('click', handleClick);
 
-        // Improve gallery click handling
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                this.click();
-            }, { passive: false });
-        });
+        // Add both click and touch handlers
+        item.addEventListener('click', handleClick);
+        item.addEventListener('touchstart', handleTouch, { passive: false });
+    });
 
-        // Improve review button click handling
-        document.querySelector('.review-button')?.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            this.closest('a').click();
-        }, { passive: false });
+    function handleClick(e) {
+        const btnId = this.id;
+        if (modalMapping[btnId]) {
+            openModal(modalMapping[btnId]);
+        }
     }
 
-    // Call the function when the document loads
-    document.addEventListener('DOMContentLoaded', function() {
-        initializeClickHandlers();
-        // ... rest of your existing code
-    });
+    function handleTouch(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const btnId = this.id;
+        if (modalMapping[btnId]) {
+            openModal(modalMapping[btnId]);
+        }
+    }
+
+    // Handle footer book now button
+    const footerBookBtn = document.getElementById('footer-book-btn');
+    if (footerBookBtn) {
+        footerBookBtn.addEventListener('click', () => {
+            openModal('book-now-modal');
+        });
+        footerBookBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            openModal('book-now-modal');
+        }, { passive: false });
+    }
 }); 
