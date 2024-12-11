@@ -208,6 +208,7 @@ h1 {
     z-index: 1000;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .modal-content {
@@ -218,7 +219,8 @@ h1 {
     padding: 20px;
     border-radius: 15px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    min-height: auto;
 }
 
 .close {
@@ -1622,5 +1624,99 @@ a {
     .grid-item:active {
         opacity: 0.7;
     }
+}
+
+/* Improve modal scrolling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: visible;
+    min-height: auto;
+}
+
+/* Improve modal sections scrolling */
+.modal-sections {
+    position: relative;
+    overflow: visible;
+    padding-bottom: 20px; /* Add padding to ensure last item is visible */
+}
+
+/* Fix modal content height on mobile */
+@media screen and (max-width: 480px) {
+    .modal {
+        padding: 0;
+    }
+    
+    .modal-content {
+        margin: 0;
+        min-height: 100%;
+        border-radius: 0;
+        padding-bottom: 40px; /* Extra padding at bottom for better scrolling */
+    }
+
+    /* Ensure content is scrollable */
+    .modal-sections,
+    .amenities-grid,
+    .gallery-grid,
+    .booking-options {
+        -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
+        padding-bottom: 40px;
+    }
+
+    /* Fix sticky header */
+    .modal h2 {
+        position: sticky;
+        top: 0;
+        background: white;
+        padding: 20px 0 10px;
+        margin: 0;
+        z-index: 2;
+    }
+
+    /* Ensure close button stays visible */
+    .close {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Improve touch scrolling for all scrollable containers */
+    .category-content,
+    .modal-section,
+    .reviews-section,
+    .booking-options {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
   

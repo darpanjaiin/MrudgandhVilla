@@ -33,10 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = 'block';
+            document.body.classList.add('modal-open');
+            
             // Initialize gallery if it's the gallery modal
             if (modalId === 'gallery-modal') {
                 setTimeout(initializeGallery, 100);
             }
+            
+            // Reset scroll position
+            modal.scrollTop = 0;
         }
     }
 
@@ -109,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modal = closeBtn.closest('.modal');
             if (modal) {
                 modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
             }
         });
     });
@@ -117,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
             e.target.style.display = 'none';
+            document.body.classList.remove('modal-open');
         }
     });
 
