@@ -27,15 +27,120 @@ document.addEventListener('DOMContentLoaded', function() {
         'feedback-btn': 'feedback-modal'
     };
 
-    // Add click handlers for all buttons
-    Object.keys(modalMapping).forEach(btnId => {
-        const btn = document.getElementById(btnId);
-        const modal = document.getElementById(modalMapping[btnId]);
-        if (btn && modal) {
-            btn.addEventListener('click', () => {
-                openModal(modalMapping[btnId]);
-            });
+    // Improve modal click handling
+    function initializeModalHandlers() {
+        // Get all grid items
+        const gridItems = document.querySelectorAll('.grid-item');
+        
+        gridItems.forEach(item => {
+            // Remove any existing listeners first
+            item.removeEventListener('click', handleGridItemClick);
+            item.removeEventListener('touchstart', handleGridItemTouch);
+            
+            // Add both click and touch handlers
+            item.addEventListener('click', handleGridItemClick);
+            item.addEventListener('touchstart', handleGridItemTouch, { passive: false });
+        });
+    }
+
+    function handleGridItemClick(e) {
+        const btnId = this.id;
+        if (modalMapping[btnId]) {
+            openModal(modalMapping[btnId]);
         }
+    }
+
+    function handleGridItemTouch(e) {
+        e.preventDefault(); // Prevent default touch behavior
+        const btnId = this.id;
+        if (modalMapping[btnId]) {
+            openModal(modalMapping[btnId]);
+        }
+    }
+
+    // Function to open modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+            
+            // Initialize gallery if it's the gallery modal
+            if (modalId === 'gallery-modal') {
+                setTimeout(initializeGallery, 100);
+            }
+        }
+    }
+
+    // Add this to ensure proper touch handling for gallery items
+    function initializeGalleryTouchHandlers() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.removeEventListener('touchstart', handleGalleryTouch);
+            item.addEventListener('touchstart', handleGalleryTouch, { passive: false });
+        });
+    }
+
+    function handleGalleryTouch(e) {
+        e.preventDefault();
+        const img = this.querySelector('img');
+        showLightbox(img);
+    }
+
+    function showLightbox(img) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        
+        const lightboxImg = document.createElement('img');
+        lightboxImg.src = img.src;
+        
+        const closeBtn = document.createElement('span');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.innerHTML = '&times;';
+        
+        lightbox.appendChild(lightboxImg);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+        
+        setTimeout(() => lightbox.classList.add('active'), 10);
+        
+        // Add touch handling for lightbox close
+        closeBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            closeLightbox(lightbox);
+        }, { passive: false });
+        
+        lightbox.addEventListener('touchstart', (e) => {
+            if (e.target === lightbox) {
+                e.preventDefault();
+                closeLightbox(lightbox);
+            }
+        }, { passive: false });
+    }
+
+    function closeLightbox(lightbox) {
+        lightbox.classList.remove('active');
+        setTimeout(() => lightbox.remove(), 300);
+    }
+
+    // Initialize all handlers
+    initializeModalHandlers();
+
+    // Add specific handling for review button
+    const reviewButton = document.querySelector('.review-button');
+    if (reviewButton) {
+        reviewButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const link = reviewButton.closest('a');
+            if (link) {
+                window.open(link.href, '_blank');
+            }
+        }, { passive: false });
+    }
+
+    // Re-initialize handlers when needed
+    document.getElementById('gallery-btn')?.addEventListener('click', () => {
+        setTimeout(initializeGalleryTouchHandlers, 100);
     });
 
     // Share functionality

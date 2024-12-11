@@ -96,6 +96,9 @@ h1 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    min-height: 44px;
+    position: relative;
+    z-index: 1;
 }
 
 .grid-item:active {
@@ -112,6 +115,8 @@ h1 {
     margin-bottom: 6px;
     background: transparent;
     transition: transform 0.2s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .grid-item .icon-wrapper i {
@@ -1397,6 +1402,9 @@ body {
     cursor: pointer;
     height: 200px;
     touch-action: manipulation;
+    min-height: 44px;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery-item img {
@@ -1537,6 +1545,10 @@ body {
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    min-width: 44px;
+    position: relative;
+    z-index: 2;
 }
 
 .review-button:hover {
