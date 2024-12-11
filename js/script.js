@@ -23,36 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'specials-btn': 'specials-modal',
         'host-favorites': 'host-favorites-modal',
         'amenities-card': 'amenities-modal',
-        'gallery-btn': 'gallery-modal',
         'gallery-card': 'gallery-modal',
-        'footer-book-btn': 'book-now-modal'
+        'feedback-btn': 'feedback-modal'
     };
-
-    // Function to open modal
-    function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            document.body.classList.add('modal-open');
-            modal.style.display = 'block';
-            
-            // Reset scroll position
-            modal.scrollTop = 0;
-            
-            // Initialize gallery if needed
-            if (modalId === 'gallery-modal') {
-                setTimeout(initializeGallery, 100);
-            }
-            
-            // Ensure modal content is visible
-            const modalContent = modal.querySelector('.modal-content');
-            if (modalContent) {
-                modalContent.style.opacity = '0';
-                setTimeout(() => {
-                    modalContent.style.opacity = '1';
-                }, 10);
-            }
-        }
-    }
 
     // Add click handlers for all buttons
     Object.keys(modalMapping).forEach(btnId => {
@@ -62,69 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.addEventListener('click', () => {
                 openModal(modalMapping[btnId]);
             });
-            // Add touch event handler for mobile
-            btn.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                openModal(modalMapping[btnId]);
-            }, { passive: false });
         }
     });
 
-    // Initialize gallery functionality
-    function initializeGallery() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const body = document.body;
+    // Share functionality
+    const shareBtn = document.getElementById('share-btn');
+    shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "Joey's In - Digital Guidebook",
+                    text: 'Check out this amazing property!',
+                    url: window.location.href
+                });
+            } catch (err) {
+                console.log('Error sharing:', err);
+                alert('Unable to share at this time');
+            }
+        } else {
+            alert('Share via: [Copy URL functionality to be implemented]');
+        }
+    });
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const img = item.querySelector('img');
-                showLightbox(img);
-            });
-            
-            item.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                const img = item.querySelector('img');
-                showLightbox(img);
-            }, { passive: false });
-        });
-    }
-
-    function showLightbox(img) {
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox';
-        
-        const lightboxImg = document.createElement('img');
-        lightboxImg.src = img.src;
-        
-        const closeBtn = document.createElement('span');
-        closeBtn.className = 'lightbox-close';
-        closeBtn.innerHTML = '&times;';
-        
-        lightbox.appendChild(lightboxImg);
-        lightbox.appendChild(closeBtn);
-        document.body.appendChild(lightbox);
-        
-        setTimeout(() => lightbox.classList.add('active'), 10);
-        
-        closeBtn.addEventListener('click', () => closeLightbox(lightbox));
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox(lightbox);
-        });
-    }
-
-    function closeLightbox(lightbox) {
-        lightbox.classList.remove('active');
-        setTimeout(() => lightbox.remove(), 300);
-    }
+    // Feedback form submission
+    const feedbackForm = document.getElementById('feedback-form');
+    feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your feedback!');
+        closeModal('feedback-modal');
+        feedbackForm.reset();
+    });
 
     // Close button functionality for all modals
     document.querySelectorAll('.close').forEach(closeBtn => {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const modal = closeBtn.closest('.modal');
-            if (modal) {
-                closeModal(modal.id);
-            }
+        closeBtn.addEventListener('click', () => {
+            closeModal(closeBtn.closest('.modal').id);
         });
     });
 
@@ -253,89 +199,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('gallery-btn').addEventListener('click', () => {
         setTimeout(initializeGallery, 100);
     });
-
-    // Improve touch handling for all grid items
-    document.querySelectorAll('.grid-item').forEach(item => {
-        // Remove any existing listeners first
-        item.removeEventListener('touchstart', handleTouch);
-        item.removeEventListener('click', handleClick);
-
-        // Add both click and touch handlers
-        item.addEventListener('click', handleClick);
-        item.addEventListener('touchstart', handleTouch, { passive: false });
-    });
-
-    function handleClick(e) {
-        const btnId = this.id;
-        if (modalMapping[btnId]) {
-            openModal(modalMapping[btnId]);
-        }
-    }
-
-    function handleTouch(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const btnId = this.id;
-        if (modalMapping[btnId]) {
-            openModal(modalMapping[btnId]);
-        }
-    }
-
-    // Handle footer book now button
-    const footerBookBtn = document.getElementById('footer-book-btn');
-    if (footerBookBtn) {
-        footerBookBtn.addEventListener('click', () => {
-            openModal('book-now-modal');
-        });
-        footerBookBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            openModal('book-now-modal');
-        }, { passive: false });
-    }
-
-    // Improve touch handling for review button and all links
-    function initializeTouchHandlers() {
-        // Handle review button
-        const reviewButton = document.querySelector('.review-button');
-        if (reviewButton) {
-            reviewButton.addEventListener('click', handleReviewClick);
-            reviewButton.addEventListener('touchstart', handleReviewTouch, { passive: false });
-        }
-
-        // Handle all external links
-        document.querySelectorAll('a[href^="http"]').forEach(link => {
-            link.addEventListener('touchstart', handleLinkTouch, { passive: false });
-        });
-
-        // Handle booking platform links
-        document.querySelectorAll('.booking-link').forEach(link => {
-            link.addEventListener('touchstart', handleLinkTouch, { passive: false });
-        });
-    }
-
-    function handleReviewClick(e) {
-        e.preventDefault();
-        const link = this.closest('a');
-        if (link) {
-            window.open(link.href, '_blank');
-        }
-    }
-
-    function handleReviewTouch(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const link = this.closest('a');
-        if (link) {
-            window.open(link.href, '_blank');
-        }
-    }
-
-    function handleLinkTouch(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.open(this.href, '_blank');
-    }
-
-    // Initialize touch handlers
-    initializeTouchHandlers();
 }); 
