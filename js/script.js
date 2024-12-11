@@ -23,47 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
         'specials-btn': 'specials-modal',
         'host-favorites': 'host-favorites-modal',
         'amenities-card': 'amenities-modal',
+        'gallery-btn': 'gallery-modal',
         'gallery-card': 'gallery-modal',
         'feedback-btn': 'feedback-modal'
     };
-
-    // Improve modal click handling
-    function initializeModalHandlers() {
-        // Get all grid items
-        const gridItems = document.querySelectorAll('.grid-item');
-        
-        gridItems.forEach(item => {
-            // Remove any existing listeners first
-            item.removeEventListener('click', handleGridItemClick);
-            item.removeEventListener('touchstart', handleGridItemTouch);
-            
-            // Add both click and touch handlers
-            item.addEventListener('click', handleGridItemClick);
-            item.addEventListener('touchstart', handleGridItemTouch, { passive: false });
-        });
-    }
-
-    function handleGridItemClick(e) {
-        const btnId = this.id;
-        if (modalMapping[btnId]) {
-            openModal(modalMapping[btnId]);
-        }
-    }
-
-    function handleGridItemTouch(e) {
-        e.preventDefault(); // Prevent default touch behavior
-        const btnId = this.id;
-        if (modalMapping[btnId]) {
-            openModal(modalMapping[btnId]);
-        }
-    }
 
     // Function to open modal
     function openModal(modalId) {
         const modal = document.getElementById(modalId);
         if (modal) {
             modal.style.display = 'block';
-            
             // Initialize gallery if it's the gallery modal
             if (modalId === 'gallery-modal') {
                 setTimeout(initializeGallery, 100);
@@ -71,20 +40,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add this to ensure proper touch handling for gallery items
-    function initializeGalleryTouchHandlers() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        galleryItems.forEach(item => {
-            item.removeEventListener('touchstart', handleGalleryTouch);
-            item.addEventListener('touchstart', handleGalleryTouch, { passive: false });
-        });
-    }
+    // Add click handlers for all buttons
+    Object.keys(modalMapping).forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        const modal = document.getElementById(modalMapping[btnId]);
+        if (btn && modal) {
+            btn.addEventListener('click', () => {
+                openModal(modalMapping[btnId]);
+            });
+            // Add touch event handler for mobile
+            btn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                openModal(modalMapping[btnId]);
+            }, { passive: false });
+        }
+    });
 
-    function handleGalleryTouch(e) {
-        e.preventDefault();
-        const img = this.querySelector('img');
-        showLightbox(img);
+    // Initialize gallery functionality
+    function initializeGallery() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const body = document.body;
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                showLightbox(img);
+            });
+            
+            item.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                const img = item.querySelector('img');
+                showLightbox(img);
+            }, { passive: false });
+        });
     }
 
     function showLightbox(img) {
@@ -104,18 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setTimeout(() => lightbox.classList.add('active'), 10);
         
-        // Add touch handling for lightbox close
-        closeBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            closeLightbox(lightbox);
-        }, { passive: false });
-        
-        lightbox.addEventListener('touchstart', (e) => {
-            if (e.target === lightbox) {
-                e.preventDefault();
-                closeLightbox(lightbox);
-            }
-        }, { passive: false });
+        closeBtn.addEventListener('click', () => closeLightbox(lightbox));
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox(lightbox);
+        });
     }
 
     function closeLightbox(lightbox) {
@@ -123,66 +103,20 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => lightbox.remove(), 300);
     }
 
-    // Initialize all handlers
-    initializeModalHandlers();
-
-    // Add specific handling for review button
-    const reviewButton = document.querySelector('.review-button');
-    if (reviewButton) {
-        reviewButton.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const link = reviewButton.closest('a');
-            if (link) {
-                window.open(link.href, '_blank');
-            }
-        }, { passive: false });
-    }
-
-    // Re-initialize handlers when needed
-    document.getElementById('gallery-btn')?.addEventListener('click', () => {
-        setTimeout(initializeGalleryTouchHandlers, 100);
-    });
-
-    // Share functionality
-    const shareBtn = document.getElementById('share-btn');
-    shareBtn.addEventListener('click', async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: "Joey's In - Digital Guidebook",
-                    text: 'Check out this amazing property!',
-                    url: window.location.href
-                });
-            } catch (err) {
-                console.log('Error sharing:', err);
-                alert('Unable to share at this time');
-            }
-        } else {
-            alert('Share via: [Copy URL functionality to be implemented]');
-        }
-    });
-
-    // Feedback form submission
-    const feedbackForm = document.getElementById('feedback-form');
-    feedbackForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your feedback!');
-        closeModal('feedback-modal');
-        feedbackForm.reset();
-    });
-
     // Close button functionality for all modals
     document.querySelectorAll('.close').forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
-            closeModal(closeBtn.closest('.modal').id);
+            const modal = closeBtn.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
         });
     });
 
     // Close modal when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
-            closeModal(e.target.id);
+            e.target.style.display = 'none';
         }
     });
 
