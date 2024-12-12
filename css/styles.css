@@ -1577,6 +1577,8 @@ body {
     font-size: 15px;
     transition: transform 0.2s ease;
     margin-top: 16px;
+    margin-bottom: 16px;
+
 }
 
 .map-button:active {
