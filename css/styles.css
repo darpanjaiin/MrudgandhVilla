@@ -25,7 +25,7 @@ body {
     letter-spacing: -0.2px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    background: linear-gradient(135deg, #e3e9f2 0%, #e8ecf1 100%);
     min-height: 100vh;
 }
 
@@ -39,7 +39,7 @@ body {
 .hero-image img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .container {
@@ -405,12 +405,12 @@ footer {
 .footer-buttons button {
     flex: 1;
     padding: 12px 16px;
-    border: none;
+    border-color: black;
     border-radius: 8px;
-    background: #f8f8f8;
-    font-size: 13px;
+    background: #ffffff;
+    font-size: 12px;
     font-weight: 600;
-    color: #333;
+    color: #000000;
     text-align: center;
     transition: background-color 0.2s ease;
     font-family: var(--system-font);
