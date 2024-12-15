@@ -43,15 +43,25 @@ document.addEventListener('DOMContentLoaded', function() {
         'rules-btn': 'rules-modal',
         'specials-btn': 'specials-modal',
         'host-favorites': 'host-favorites-modal',
-        'amenities-card': 'amenities-modal',
-        'gallery-card': 'gallery-modal'
+        'gallery-card': 'gallery-modal',
+        'amenities-card': 'amenities-modal'
     };
 
     // Add click handlers for all buttons
     Object.entries(buttonMappings).forEach(([btnId, modalId]) => {
         const button = document.getElementById(btnId);
         if (button) {
-            button.addEventListener('click', () => openModal(modalId));
+            button.addEventListener('click', () => {
+                console.log(`Button clicked: ${btnId} for modal: ${modalId}`);
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    openModal(modalId);
+                } else {
+                    console.error(`Modal not found: ${modalId}`);
+                }
+            });
+        } else {
+            console.error(`Button not found: ${btnId}`);
         }
     });
 
