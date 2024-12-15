@@ -1839,4 +1839,105 @@ body {
     color: #555;
     margin: 0;
 }
+
+/* Food Menu Mobile Enhancements */
+@media (max-width: 768px) {
+    /* Improve table visibility */
+    .food-packages-table table,
+    .rate-table {
+        width: 100%;
+        margin: 15px 0;
+        border: 1px solid #ddd;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .food-packages-table th,
+    .food-packages-table td,
+    .rate-table th,
+    .rate-table td {
+        padding: 12px 8px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+    }
+
+    .food-packages-table th,
+    .rate-table th {
+        background-color: #f8f8f8;
+        font-weight: 600;
+    }
+
+    /* Enhance grey boxes visibility */
+    .menu-note {
+        background: #f8f8f8;
+        padding: 16px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* Improve spacing in menu sections */
+    .modal-section {
+        margin-bottom: 25px;
+        padding: 0 15px;
+    }
+
+    .menu-category {
+        margin-bottom: 25px;
+    }
+
+    .menu-subcategory {
+        margin-bottom: 20px;
+        padding: 0 5px;
+    }
+
+    /* Better heading visibility */
+    .modal-section h3 {
+        margin: 20px 0 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    .menu-category h4 {
+        margin: 15px 0 12px;
+        color: #333;
+    }
+
+    /* Improve list readability */
+    .menu-subcategory ul {
+        margin-top: 8px;
+    }
+
+    .menu-subcategory li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    /* Better spacing for thali items */
+    .thali-items {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .item-group {
+        background: #f8f8f8;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .item-group h6 {
+        margin-bottom: 10px;
+    }
+
+    /* Price note enhancement */
+    .price-note {
+        margin: 10px 0;
+        padding: 8px;
+        background: #f8f8f8;
+        border-radius: 4px;
+        text-align: center;
+    }
+}
   
