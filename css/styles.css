@@ -1697,4 +1697,146 @@ body {
         justify-content: center;
     }
 }
+
+/* Food Menu Styles */
+.food-packages-table {
+    margin-bottom: 30px;
+}
+
+.food-packages-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.food-packages-table th,
+.food-packages-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.food-packages-table th {
+    background-color: #f8f8f8;
+}
+
+.food-packages-table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.price-note {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+    margin-top: 8px;
+}
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h4 {
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.menu-subcategory {
+    margin-bottom: 20px;
+}
+
+.menu-subcategory h5 {
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.menu-subcategory ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.menu-subcategory li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.menu-subcategory li:before {
+    content: "•";
+    position: absolute;
+    left: -15px;
+    color: #666;
+}
+
+.thali-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.item-group h6 {
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.menu-note {
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.rate-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rate-table th,
+.rate-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.rate-table th {
+    background-color: #f8f8f8;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .thali-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .food-packages-table td {
+        padding: 8px;
+    }
+}
+
+.menu-note h4 {
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 600;
+}
+
+.menu-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-note ul li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.menu-note p {
+    color: #555;
+    margin: 0;
+}
   
