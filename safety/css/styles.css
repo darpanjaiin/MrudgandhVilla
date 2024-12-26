@@ -47,7 +47,7 @@ body {
     max-width: 100%;
     max-width: 480px;
     width: 100%;
-    background-color: rgb(200, 198, 198);
+    background-color: rgb(239, 233, 233);
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -2091,7 +2091,67 @@ body {
 }
 
 /* Local Specials Modal Enhancement */
-/* " */
+#specials-modal .attractions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#specials-modal .attraction-card {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease;
+}
+
+#specials-modal .attraction-card:active {
+    transform: scale(0.98);
+}
+
+#specials-modal .attraction-card h4 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#specials-modal .attraction-card .distance {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+#specials-modal .attraction-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile Specific Enhancements */
+@media (max-width: 768px) {
+    #specials-modal .attraction-card {
+        margin: 0 15px;
+        background: #f8f8f8;
+        border: 1px solid #e0e0e0;
+    }
+    
+    #specials-modal .modal-sections {
+        padding: 15px 0;
+    }
+    
+    #specials-modal .modal-section h3 {
+        margin: 0 15px 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #eee;
+        color: #333;
+        font-size: 18px;
+    }
+}
 
 /* Add vertical spacing between reviews */
 #reviews-modal .review {
@@ -2118,167 +2178,4 @@ body {
     padding-bottom: 0;
     border-bottom: none;
 }
-:root {
-    --primary-color: #000000;
-    --secondary-color: #000000;
-    --accent-color: #E74C3C;
-    --text-color: #000000;
-    --light-gray: #ECF0F1;
-    --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-style: normal !important;
-}
-
-[Previous content remains exactly the same until the Nearby Experiences Modal Styling section...]
-
-/* Nearby Experiences Modal Styling */
-#specials-modal .modal-content {
-    background-color: #ffffff;
-    border-radius: 16px;
-    max-width: 480px;
-    padding: 1.5rem;
-}
-
-#specials-modal h2 {
-    font-size: 1.4rem;
-    color: #1a1a1a;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    border: none;
-    padding: 0;
-}
-
-#specials-modal .experience-section {
-    margin-bottom: 2.5rem;
-}
-
-#specials-modal .experience-section h3 {
-    font-size: 1.2rem;
-    color: #2d3748;
-    margin-bottom: 1.25rem;
-    font-weight: 500;
-}
-
-#specials-modal .info-card {
-    background: transparent;
-    padding: 0;
-}
-
-#specials-modal .info-item {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#specials-modal .info-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-#specials-modal .info-icon {
-    width: 40px;
-    height: 40px;
-    background: #edf2f7;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
-#specials-modal .info-icon i {
-    font-size: 1.25rem;
-    color: #4a5568;
-}
-
-#specials-modal .info-content h4 {
-    font-size: 1.1rem;
-    color: #2d3748;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-#specials-modal .info-content p {
-    color: #718096;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-#specials-modal .info-content p i {
-    color: #718096;
-    font-size: 0.875rem;
-}
-
-/* Header styling for activity park section */
-#specials-modal .info-header {
-    background: #edf2f7;
-    border-radius: 10px;
-    padding: 0.875rem 1rem;
-    margin-bottom: 1rem;
-}
-
-#specials-modal .info-header p {
-    color: #4a5568;
-    font-size: 0.925rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-}
-
-/* Footer styling for activity park section */
-#specials-modal .info-footer {
-    background: #fffbeb;
-    border-radius: 10px;
-    padding: 0.875rem 1rem;
-    margin-top: 1rem;
-}
-
-#specials-modal .info-footer p {
-    color: #92400e;
-    font-size: 0.925rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-}
-
-#specials-modal .info-footer i {
-    color: #92400e;
-}
-
-/* Activities list specific styling */
-#specials-modal .activities-list .info-item {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    #specials-modal .modal-content {
-        padding: 1.25rem;
-        margin: 1rem;
-        width: calc(100% - 2rem);
-    }
-    
-    #specials-modal .info-item {
-        padding: 0.875rem;
-    }
-    
-    #specials-modal .info-icon {
-        width: 36px;
-        height: 36px;
-    }
-}
-    
+  
