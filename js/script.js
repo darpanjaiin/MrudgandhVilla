@@ -239,4 +239,62 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// Gallery Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get the filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filter gallery items
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// Make sure modal is properly initialized
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryModal = document.getElementById('gallery-modal');
+    const galleryCard = document.getElementById('gallery-card');
+    const closeButtons = document.querySelectorAll('.close');
+
+    // Open gallery modal
+    galleryCard.addEventListener('click', function() {
+        galleryModal.style.display = 'block';
+        document.body.classList.add('modal-open');
+    });
+
+    // Close modal functionality
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        });
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
 }); 
