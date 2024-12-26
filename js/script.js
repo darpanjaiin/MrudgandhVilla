@@ -184,23 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Remove any existing event listener for check-availability-btn
+    // Check Availability Button Handler
     const checkAvailabilityBtn = document.getElementById('check-availability-btn');
-    const checkAvailabilityModal = document.getElementById('check-availability-modal');
-    
-    if (checkAvailabilityBtn && checkAvailabilityModal) {
+    if (checkAvailabilityBtn) {
         checkAvailabilityBtn.addEventListener('click', function() {
-            checkAvailabilityModal.style.display = 'block';
-            document.body.classList.add('modal-open');
+            window.open('https://www.airbnb.co.in/calendar/ical/30548996.ics?s=acdb867338bd014d4d4dafbb858107f7', '_blank');
         });
-
-        // Add close functionality
-        const closeBtn = checkAvailabilityModal.querySelector('.close');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', function() {
-                checkAvailabilityModal.style.display = 'none';
-                document.body.classList.remove('modal-open');
-            });
-        }
     }
 }); 
