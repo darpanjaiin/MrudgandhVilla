@@ -2152,4 +2152,30 @@ body {
         font-size: 18px;
     }
 }
+
+/* Add vertical spacing between reviews */
+#reviews-modal .review {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#reviews-modal .review:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Review spacing and styling */
+#reviews-modal .review {
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#reviews-modal .review:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
   
