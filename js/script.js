@@ -184,11 +184,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Check Availability Button Handler
+    // Check Availability Button Handler with Mobile Deep Linking
     const checkAvailabilityBtn = document.getElementById('check-availability-btn');
     if (checkAvailabilityBtn) {
         checkAvailabilityBtn.addEventListener('click', function() {
-            window.open('https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1735199330_P3l5ED63wuaC_0SL#availability-calendar', '_blank');
+            // Detect if user is on mobile
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Deep link for mobile Airbnb app
+                const deepLink = 'airbnb://rooms/30548996?checkin=&checkout=&adults=1';
+                const webFallback = 'https://www.airbnb.co.in/rooms/30548996?check_in=&check_out=';
+                
+                // Try to open app first
+                window.location.href = deepLink;
+                
+                // If app doesn't open within 1 second, redirect to web version
+                setTimeout(function() {
+                    window.location.href = webFallback;
+                }, 1000);
+            } else {
+                // Desktop version
+                window.open('https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1735199330_P3l5ED63wuaC_0SL#availability-calendar', '_blank');
+            }
         });
     }
 }); 
