@@ -188,8 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkAvailabilityBtn = document.getElementById('check-availability-btn');
     if (checkAvailabilityBtn) {
         checkAvailabilityBtn.addEventListener('click', function() {
-            // Direct link to Airbnb listing's calendar view
-            window.open('https://www.airbnb.co.in/rooms/30548996?check_in=&check_out=&source_impression_id=p3_1733899578_P3ilALMMs3jNQJbM', '_blank');
+            window.open('https://www.airbnb.co.in/rooms/30548996?source_impression_id=p3_1735199330_P3l5ED63wuaC_0SL#availability-calendar', '_blank');
         });
     }
 }); 
