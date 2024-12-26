@@ -23,7 +23,7 @@
                 Lonavala, Pune
             </p>
             <p class="sub-tagline">
-                A 4-bedroom infinity pool villa, at just one hour’s drive from Lonavala, spacious enough to host groups of up to 20 guests.
+                A 4-bedroom infinity pool villa, at just one hour's drive from Lonavala, spacious enough to host groups of up to 20 guests.
             </p>
         </header>
 
@@ -165,56 +165,121 @@
     <div id="gallery-modal" class="modal">
         <div class="modal-content modal-large">
             <span class="close">&times;</span>
-            <h2>Property Gallery</h2>
+            <h2>Gallery</h2>
+            
+            <!-- Update the Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-border-all"></i>
+                    <span>All</span>
+                </button>
+                <button class="filter-btn" data-filter="views">
+                    <i class="fas fa-mountain"></i>
+                    <span>Views</span>
+                </button>
+                <button class="filter-btn" data-filter="pool">
+                    <i class="fas fa-swimming-pool"></i>
+                    <span>Pool</span>
+                </button>
+                <button class="filter-btn" data-filter="outdoor">
+                    <i class="fas fa-tree"></i>
+                    <span>Outdoor</span>
+                </button>
+                <button class="filter-btn" data-filter="interior">
+                    <i class="fas fa-home"></i>
+                    <span>Interior</span>
+                </button>
+            </div>
+
+            <!-- Update gallery items with categories -->
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/gallery/1.png" alt="Property View" loading="lazy">
+                <!-- Amazing Views -->
+                <div class="gallery-item" data-category="views">
+                    <img src="assets/gallery/1.png" alt="Amazing View">
                     <p>Property View</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery/infinity_pool.jpg" alt="Infinity Pool" loading="lazy">
-                    <p>Infinity Pool</p>
+                <div class="gallery-item" data-category="views">
+                    <img src="assets/gallery/balcony.jpg" alt="Balcony View">
+                    <p>Balcony View</p>
                 </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/gallery/th.jpg" alt="Tree House" loading="lazy">
-                    <p>Tree House</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery/dining_table.jpg" alt="Outdoor Dining" loading="lazy">
-                    <p>Outdoor Dining</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/gallery/common.png" alt="Living Space" loading="lazy">
-                    <p>Living Space</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom" loading="lazy">
-                    <p>Bedroom</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/gallery/a1.jpg" alt="Indoor Games Area" loading="lazy">
-                    <p>Indoor Games Area</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery/a2.png" alt="Entertainment Zone" loading="lazy">
-                    <p>Entertainment Zone</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/gallery/rv.jpg" alt="Room View" loading="lazy">
+                <div class="gallery-item" data-category="views">
+                    <img src="assets/gallery/rv.jpg" alt="Room View">
                     <p>Room View</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery/stairs.jpg" alt="Architecture" loading="lazy">
+                <div class="gallery-item" data-category="views">
+                    <img src="assets/gallery/afternoon.jpg" alt="Afternoon View">
+                    <p>Afternoon View</p>
+                </div>
+
+                <!-- Pool -->
+                <div class="gallery-item" data-category="pool">
+                    <img src="assets/gallery/infinity_pool.jpg" alt="Infinity Pool">
+                    <p>Infinity Pool</p>
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="assets/gallery/hostfav.jpg" alt="Host's Favorite">
+                    <p>Sprinkling Water</p>
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="assets/gallery/pool_view.jpg" alt="Pool View">
+                    <p>Pool Upper view</p>
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="assets/gallery/pool2.jpg" alt="Pool Night View">
+                    <p>Pool Night View</p>
+                </div>
+
+                <!-- Outdoor - Updated section with new images -->
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/dining_table.jpg" alt="Outdoor Dining">
+                    <p>Outdoor Dining</p>
+                </div>
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/stairs.jpg" alt="Architecture">
                     <p>Architecture</p>
                 </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/gallery/balcony.jpg" alt="Balcony View" loading="lazy">
-                    <p>Balcony View</p>
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/th.jpg" alt="Tree House">
+                    <p>Tree House</p>
+                </div>
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/entry.jpg" alt="Entry View">
+                    <p>Entry View</p>
+                </div>
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/mrud.jpg" alt="Property Front">
+                    <p>Property Front</p>
+                </div>
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="assets/gallery/statue.jpg" alt="Garden Statue">
+                    <p>Garden Statue</p>
+                </div>
+
+                <!-- Interior -->
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/common.png" alt="Living Space">
+                    <p>Living Space</p>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/bathroom.jpg" alt="Bathroom">
+                    <p>Bathroom</p>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/bedroom1.jpg" alt="Bedroom2">
+                    <p>Bedroom</p>
+                </div>
+
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/bedroom2.jpg" alt="Bedroom">
+                    <p>Bedroom</p>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/a1.jpg" alt="Indoor Games Area">
+                    <p>Indoor Games Area</p>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/gallery/a2.png" alt="Entertainment Zone">
+                    <p>Entertainment Zone</p>
                 </div>
             </div>
         </div>

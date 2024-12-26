@@ -140,10 +140,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Gallery functionality
+    // Gallery functionality with filters
     function initializeGallery() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
         
+        // Filter functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                // Show/hide items based on filter
+                galleryItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === itemCategory) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.display = '';
+                        }, 300);
+                    } else {
+                        item.classList.add('hidden');
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Existing lightbox functionality
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const img = item.querySelector('img');
