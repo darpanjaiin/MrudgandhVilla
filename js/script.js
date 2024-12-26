@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'nearby-btn': 'nearby-modal',
         'emergency-btn': 'emergency-modal',
         'rules-btn': 'rules-modal',
-        'specials-btn': 'specials-modal',
+        'experiences-card': 'specials-modal',
         'host-favorites': 'host-favorites-modal',
         'gallery-card': 'gallery-modal',
         'amenities-card': 'amenities-modal'
@@ -183,4 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(initializeGallery, 100);
         });
     }
+
+    // Add this with your other modal event listeners
+    document.getElementById('check-availability-btn').addEventListener('click', function() {
+        document.getElementById('check-availability-modal').style.display = 'block';
+    });
 }); 

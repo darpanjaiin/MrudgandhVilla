@@ -53,11 +53,11 @@
                 <h3>Emergency<br>Contact</h3>
             </div>
             
-            <div class="grid-item" id="specials-btn">
+            <div class="grid-item" id="check-availability-btn">
                 <div class="icon-wrapper">
-                    <i class="fas fa-gift"></i>
+                    <i class="fas fa-calendar-alt"></i>
                 </div>
-                <h3>Nearby<br>Experiences</h3>
+                <h3>Check<br>Availability</h3>
             </div>
             <div class="grid-item" id="book-now-btn">
                 <div class="icon-wrapper">
@@ -68,7 +68,6 @@
         </div>
 
         <section class="featured-sections">
-
             <div class="feature-card" id="amenities-card">
                 <img src="assets/amenities.jpg" alt="Amenities">
                 <div class="card-content">
@@ -89,6 +88,14 @@
                 <div class="card-content">
                     <h2>Gallery</h2>
                     <p>View property images</p>
+                </div>
+            </div>
+
+            <div class="feature-card" id="experiences-card">
+                <img src="assets/nearby.jpg" alt="Nearby Experiences">
+                <div class="card-content">
+                    <h2>Nearby Experiences</h2>
+                    <p>Explore local attractions</p>
                 </div>
             </div>
         </section>
@@ -1112,6 +1119,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add new modal for Check Availability -->
+    <div id="check-availability-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Check Availability</h2>
+            <div class="availability-calendar">
+                <iframe src="https://www.airbnb.co.in/embeddable/calendar/30548996" 
+                        style="border: 0; width: 100%; height: 500px;" 
+                        frameborder="0">
+                </iframe>
             </div>
         </div>
     </div>
