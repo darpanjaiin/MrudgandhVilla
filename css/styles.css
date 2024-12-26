@@ -2091,67 +2091,7 @@ body {
 }
 
 /* Local Specials Modal Enhancement */
-#specials-modal .attractions-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#specials-modal .attraction-card {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border: 1px solid #e0e0e0;
-    transition: transform 0.2s ease;
-}
-
-#specials-modal .attraction-card:active {
-    transform: scale(0.98);
-}
-
-#specials-modal .attraction-card h4 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-#specials-modal .attraction-card .distance {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
-}
-
-#specials-modal .attraction-card p {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Mobile Specific Enhancements */
-@media (max-width: 768px) {
-    #specials-modal .attraction-card {
-        margin: 0 15px;
-        background: #f8f8f8;
-        border: 1px solid #e0e0e0;
-    }
-    
-    #specials-modal .modal-sections {
-        padding: 15px 0;
-    }
-    
-    #specials-modal .modal-section h3 {
-        margin: 0 15px 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #eee;
-        color: #333;
-        font-size: 18px;
-    }
-}
+/* " */
 
 /* Add vertical spacing between reviews */
 #reviews-modal .review {

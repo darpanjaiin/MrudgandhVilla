@@ -2,10 +2,10 @@
 .modal-content.modal-large {
     max-width: 95vw;
     width: 800px;
-    padding: 20px;
+    padding: 25px;
     overflow-y: auto;
     max-height: 90vh;
-    background-color: #000;
+    background-color: white;
     scroll-behavior: smooth;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
@@ -122,5 +122,281 @@
 
     .collapsible-content.active {
         max-height: 1500px;
+    }
+}
+
+/* Updated Nearby Places Styling */
+.nearby-places {
+    padding: 20px;
+    color: var(--text-primary, #333);
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Place Cards */
+.place-card {
+    background: #a1a1a1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-card.with-image .place-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.place-card.simple {
+    background: #c4c4c4;
+}
+
+.place-content {
+    padding: 20px;
+}
+
+.place-card h4 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.distance {
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* Activity Park Card */
+.activity-park-card {
+    background: #d0d0d1;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.park-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.park-title h3 {
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+    color: #2c3e50;
+}
+
+.park-badge {
+    background: #4a90e2;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.activities-categories {
+    display: grid;
+    gap: 25px;
+}
+
+.activity-group h4 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.activity-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.activity-tag {
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.seasonal-tag {
+    font-size: 0.8rem;
+    background: #ffd700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+}
+
+.park-note {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+}
+
+.park-note i {
+    font-size: 1.5rem;
+    color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .park-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .activity-items {
+        flex-direction: column;
+    }
+}
+
+/* Nearby Experiences Modal Styling */
+.experience-section {
+    margin-bottom: 30px;
+}
+
+.experience-section h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.experience-section h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #dc3545;
+}
+
+/* Card styling */
+.info-card {
+    background-color: #f1f1f1;  /* Light grey background */
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.info-item {
+    background-color: #e6e6e6;  /* Slightly darker grey for items */
+    padding: 15px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h4 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+.info-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 4px 0 0 0;
+}
+
+/* Activities section specific styling */
+.info-header {
+    background-color: #e6e6e6;
+    padding: 15px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+
+.info-header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.activities-list .info-item {
+    background-color: #e6e6e6;
+}
+
+.info-footer {
+    background-color: #e6e6e6;
+    padding: 15px;
+    margin-top: 2px;
+    border-radius: 4px;
+}
+
+.info-footer p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Calendar styling */
+.calendar-note {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.calendar-note i {
+    color: #4a90e2;
+    margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .info-card {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    .experience-section h3 {
+        padding: 0 15px;
+    }
+    
+    .info-item, .info-header, .info-footer {
+        border-radius: 0;
     }
 }

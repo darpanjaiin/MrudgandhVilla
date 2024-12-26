@@ -422,45 +422,91 @@
     <div id="specials-modal" class="modal">
         <div class="modal-content modal-large">
             <span class="close">&times;</span>
-            <h2>Local Attractions</h2>
+            <h2>Explore Nearby Experiences</h2>
             <div class="modal-sections">
-                <div class="modal-section">
-                    <h3>🏛️ Nearby Attractions</h3>
-                    <div class="attractions-grid">
-                        <div class="attraction-card">
-                            <h4>Mulshi Lake</h4>
-                            <p class="distance">5 minute walk</p>
-                            <p>Beautiful lake with scenic views, perfect for nature lovers and scenic photographs</p>
+                <div class="nearby-places">
+                    <!-- Tourist Places Section -->
+                    <div class="experience-section">
+                        <h3>Tourist Places</h3>
+                        <div class="info-card">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-mountain"></i></div>
+                                <div class="info-content">
+                                    <h4>Tikona Fort</h4>
+                                    <p><i class="fas fa-clock"></i> 30 Min drive from Mrudugandh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-water"></i></div>
+                                <div class="info-content">
+                                    <h4>Pawna Lake</h4>
+                                    <p><i class="fas fa-clock"></i> 30 Min drive from Mrudugandh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-temple"></i></div>
+                                <div class="info-content">
+                                    <h4>Hadshi Temple with Theme Park</h4>
+                                    <p><i class="fas fa-clock"></i> 20 Min drive from Mrudugandh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-om"></i></div>
+                                <div class="info-content">
+                                    <h4>Chinmaya Vibhooti</h4>
+                                    <p><i class="fas fa-clock"></i> 20 Min drive from Mrudugandh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-water"></i></div>
+                                <div class="info-content">
+                                    <h4>Mulshi Dam</h4>
+                                    <p><i class="fas fa-clock"></i> 1 Hr drive from Mrudugandh</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-city"></i></div>
+                                <div class="info-content">
+                                    <h4>LAVASA</h4>
+                                    <p><i class="fas fa-clock"></i> 1.30 Hr drive from Mrudugandh</p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="attraction-card">
-                            <h4>Bhaja Buddhist Caves</h4>
-                            <p class="distance">33.2 km away</p>
-                            <p>22 landmark rock-cut caves featuring old carvings & a large shrine, dating to the 2nd century BCE</p>
-                        </div>
-                        
-                        <div class="attraction-card">
-                            <h4>Sindhudurg Fort</h4>
-                            <p class="distance">66.7 km away</p>
-                            <p>Historic hilltop fort with a memorial for 17th-century emperors, plus a temple to the goddess Kali</p>
-                        </div>
-                        
-                        <div class="attraction-card">
-                            <h4>Karla Buddha Caves</h4>
-                            <p class="distance">43 km away</p>
-                            <p>Ancient rock-carved cave temple housing a monastery, soaring halls, statues & intricate columns</p>
-                        </div>
-                        
-                        <div class="attraction-card">
-                            <h4>Pataleshwar Temple</h4>
-                            <p class="distance">42.8 km away</p>
-                            <p>Dedicated to the Hindu god Shiva, this compact rock-cut cave temple dates to the 8th century</p>
-                        </div>
-                        
-                        <div class="attraction-card">
-                            <h4>Durga Tekdi</h4>
-                            <p class="distance">43.4 km away</p>
-                            <p>Hillside green space with a temple offering a kids' playground, lawns for picnicking & city views</p>
+                    </div>
+
+                    <!-- Adventure Activities Section -->
+                    <div class="experience-section">
+                        <h3>Girivan Sports & Activity Park</h3>
+                        <div class="info-card">
+                            <div class="info-header">
+                                <p><i class="fas fa-clock"></i> 10 Min drive from Mrudugandh</p>
+                            </div>
+                            <div class="activities-list">
+                                <div class="info-item">
+                                    <div class="info-icon"><i class="fas fa-bullseye"></i></div>
+                                    <div class="info-content">
+                                        <h4>Adventure Sports</h4>
+                                        <p>Archery • Pistol Shooting • Rifle Shooting</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon"><i class="fas fa-mountain"></i></div>
+                                    <div class="info-content">
+                                        <h4>Outdoor Activities</h4>
+                                        <p>Burma Bridge • Cobweb Rope • Zip Line</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon"><i class="fas fa-water"></i></div>
+                                    <div class="info-content">
+                                        <h4>Water Activities</h4>
+                                        <p>Rain Dance • Natural Waterfall (Monsoon Only)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-footer">
+                                <p><i class="fas fa-info-circle"></i> All activities are paid. Please confirm availability before planning.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1129,10 +1175,14 @@
             <span class="close">&times;</span>
             <h2>Check Availability</h2>
             <div class="availability-calendar">
-                <iframe src="https://www.airbnb.co.in/embeddable/calendar/30548996" 
-                        style="border: 0; width: 100%; height: 500px;" 
-                        frameborder="0">
+                <iframe 
+                    src="https://www.airbnb.co.in/calendar/ical/30548996.ics?s=acdb867338bd014d4d4dafbb858107f7" 
+                    style="border: 0; width: 100%; height: 500px;" 
+                    frameborder="0">
                 </iframe>
+                <div class="calendar-note">
+                    <p><i class="fas fa-info-circle"></i> This calendar is synchronized with our Airbnb listing and shows real-time availability.</p>
+                </div>
             </div>
         </div>
     </div>

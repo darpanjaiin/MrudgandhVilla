@@ -184,8 +184,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add this with your other modal event listeners
-    document.getElementById('check-availability-btn').addEventListener('click', function() {
-        document.getElementById('check-availability-modal').style.display = 'block';
-    });
+    // Remove any existing event listener for check-availability-btn
+    const checkAvailabilityBtn = document.getElementById('check-availability-btn');
+    const checkAvailabilityModal = document.getElementById('check-availability-modal');
+    
+    if (checkAvailabilityBtn && checkAvailabilityModal) {
+        checkAvailabilityBtn.addEventListener('click', function() {
+            checkAvailabilityModal.style.display = 'block';
+            document.body.classList.add('modal-open');
+        });
+
+        // Add close functionality
+        const closeBtn = checkAvailabilityModal.querySelector('.close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                checkAvailabilityModal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            });
+        }
+    }
 }); 
