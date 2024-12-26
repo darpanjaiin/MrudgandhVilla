@@ -1819,7 +1819,7 @@ body {
 }
 
 .menu-note h4 {
-    margin-bottom: 12px;
+    margin-bottom: 2px;
     color: #333;
     font-weight: 600;
 }
@@ -1831,7 +1831,7 @@ body {
 }
 
 .menu-note ul li {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     color: #555;
 }
 
