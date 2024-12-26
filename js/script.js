@@ -192,9 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
             if (isMobile) {
-                // Deep link for mobile Airbnb app
-                const deepLink = 'airbnb://rooms/30548996?checkin=&checkout=&adults=1';
-                const webFallback = 'https://www.airbnb.co.in/rooms/30548996?check_in=&check_out=';
+                // Deep link directly to calendar view in Airbnb app
+                const deepLink = 'airbnb://rooms/30548996/calendar?checkin=&checkout=&adults=1&action=calendar';
+                const webFallback = 'https://www.airbnb.co.in/rooms/30548996/calendar';
                 
                 // Try to open app first
                 window.location.href = deepLink;
