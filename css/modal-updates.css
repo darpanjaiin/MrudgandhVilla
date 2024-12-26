@@ -400,3 +400,74 @@
         border-radius: 0;
     }
 }
+
+/* Nearby Experiences Modal Styling - Update with more specific selectors */
+#specials-modal .modal-content {
+    background-color: white;
+}
+
+#specials-modal .info-card {
+    background-color: #e6e6e6;  /* Base grey color */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#specials-modal .info-item {
+    background-color: #d9d9d9;  /* Slightly darker grey */
+    padding: 15px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+#specials-modal .info-header {
+    background-color: #d9d9d9;
+    padding: 15px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+
+#specials-modal .info-footer {
+    background-color: #d9d9d9;
+    padding: 15px;
+    margin-top: 2px;
+    border-radius: 4px;
+}
+
+/* Override any conflicting styles */
+#specials-modal .modal-sections {
+    background: transparent;
+}
+
+#specials-modal .nearby-places {
+    background: transparent;
+}
+
+/* Ensure text remains readable on grey background */
+#specials-modal .info-content h4 {
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+}
+
+#specials-modal .info-content p {
+    color: #666;
+    margin: 4px 0 0 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #specials-modal .info-card {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    #specials-modal .info-item,
+    #specials-modal .info-header,
+    #specials-modal .info-footer {
+        border-radius: 0;
+    }
+}
